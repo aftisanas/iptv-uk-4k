@@ -1,6 +1,8 @@
 export const SITE_NAME = "IPTV UK 4K";
 export const SITE_URL = "https://iptv-uk-4k.com";
 export const CONTACT_EMAIL = "support@iptv-uk-4k.com";
+export const SITE_LOGO_PATH = "/iptv-uk.webp";
+export const SITE_LOGO_URL = `${SITE_URL}${SITE_LOGO_PATH}`;
 
 export const NAV_LINKS = [
   { label: "Home", href: "/" },
@@ -50,27 +52,27 @@ export const FEATURES = [
     icon: "Clock" as const,
   },
   {
-    title: "Best IPTV UK For Households — Five Screens Streaming Simultaneously",
+    title: "Best IPTV UK For Households — Multi-Device Connections Available",
     description:
-      "Parents watch the evening drama, kids stream cartoons, grandparents follow the cricket — all in 4K, all at the same time, all on one account. Five simultaneous connections make this the best-value per-screen IPTV UK deal in Britain.",
+      "Parents watch the evening drama, kids stream cartoons, grandparents follow the cricket — all in 4K. Extra connection options are available so the whole household can stream at once, making this one of the best-value IPTV UK deals in Britain.",
     icon: "LayoutGrid" as const,
   },
   {
-    title: "Cheap IPTV Subscription From £12.99 — No Contract, No Lock-In",
+    title: "Cheap IPTV Subscription From £4.17/mo — No Contract, No Lock-In",
     description:
-      "Full access to 37,000 channels, 4K and VPN from just £12.99 a month. No satellite dish, no engineer visit, no 24-month commitment. Cancel anytime with a 30-day money-back guarantee protecting every penny.",
+      "Full access to 37,000 channels, 4K and a secure proxy option from just £4.17 a month on the annual plan. No satellite dish, no engineer visit, no long commitment. Cancel anytime with a 30-day money-back guarantee protecting every penny.",
     icon: "Clock" as const,
   },
   {
-    title: "Buy IPTV With A Built-In VPN — Privacy Wrapped Around Every Stream",
+    title: "Buy IPTV With A Secure Proxy Option — Privacy Wrapped Around Every Stream",
     description:
-      "A full VPN tunnel encrypts every channel at zero extra cost. No bandwidth cap, no logs, no separate subscription. When you buy IPTV here, privacy is built into the base price rather than sold as a bolt-on.",
+      "A secure proxy option helps keep every channel private at zero extra cost. No bandwidth cap, no logs, no separate subscription. When you buy IPTV here, proxy-secured streaming is built into the base price rather than sold as a bolt-on.",
     icon: "Shield" as const,
   },
   {
-    title: "IPTV Reviews Rate This Service 4.9/5 — Trusted By 50,000 UK Homes",
+    title: "Trusted By 50,000 UK Homes — A Proven IPTV UK Service",
     description:
-      "Independent IPTV reviews across Trustpilot, Reddit and comparison blogs consistently place this IPTV service at the top. Fifty thousand British households tested it and stayed — the trust score speaks for itself.",
+      "Fifty thousand British households tested this IPTV UK service and stayed. Real subscribers across England, Scotland, Wales and Northern Ireland rely on it every day — retention, not hype, tells the story.",
     icon: "Film" as const,
   },
 ] as const;
@@ -81,22 +83,22 @@ export const PRICING_PLANS = [
     tier: "Starter",
     name: "3 Months",
     subtitle: "Three months of full-access 4K streaming across Britain",
-    price: 38.97,
+    price: 25.99,
     originalPrice: 59.99,
-    perMonth: 12.99,
+    perMonth: 8.66,
     period: "3 months",
-    devices: 5,
+    devices: 1,
     badge: "Starter",
-    discount: "-35%",
+    discount: "-57%",
     accentColor: "violet",
     features: [
       "37,000+ live channels with full UK coverage",
       "198,000+ films, series and documentaries on demand",
       "Full EPG with 7-day catch-up TV",
       "HD, Full HD and native 4K UHD streaming",
-      "Five simultaneous screens on one account",
+      "Extra connection options available as an add-on",
       "24/7 dedicated UK support",
-      "Built-in VPN included at no extra cost",
+      "Secure proxy option included",
       "30-day money-back guarantee",
       "60-second activation by email",
     ],
@@ -108,81 +110,81 @@ export const PRICING_PLANS = [
     tier: "Half-Year",
     name: "6 Months",
     subtitle: "Six months of uninterrupted streaming at a reduced rate",
-    price: 65.94,
+    price: 35.99,
     originalPrice: 119.99,
-    perMonth: 10.99,
+    perMonth: 6.00,
     period: "6 months",
-    devices: 5,
+    devices: 1,
     badge: "Half-Year Value",
-    discount: "-45%",
+    discount: "-70%",
     accentColor: "violet",
     features: [
       "37,000+ live channels with full UK coverage",
       "198,000+ films, series and documentaries on demand",
       "Full EPG with 7-day catch-up TV",
       "HD, Full HD and native 4K UHD streaming",
-      "Five simultaneous screens on one account",
+      "Extra connection options available as an add-on",
       "24/7 dedicated UK support",
-      "Built-in VPN included at no extra cost",
+      "Secure proxy option included",
       "30-day money-back guarantee",
       "60-second activation by email",
     ],
     popular: false,
-    savings: "Save 45%",
+    savings: "Save 70%",
   },
   {
     id: "gold",
     tier: "Annual",
     name: "12 Months",
     subtitle: "The best-selling plan for British households",
-    price: 93.48,
+    price: 49.99,
     originalPrice: 155.88,
-    perMonth: 7.79,
+    perMonth: 4.17,
     period: "year",
-    devices: 5,
-    badge: "Most Popular — Save 40%",
-    discount: "-40%",
+    devices: 1,
+    badge: "Most Popular — Save 68%",
+    discount: "-68%",
     accentColor: "blue",
     features: [
       "37,000+ live channels with full UK coverage",
       "198,000+ films, series and documentaries on demand",
       "Full EPG with 7-day catch-up TV",
       "HD, Full HD and native 4K UHD streaming",
-      "Five simultaneous screens on one account",
+      "Extra connection options available as an add-on",
       "24/7 dedicated UK support",
-      "Built-in VPN included at no extra cost",
+      "Secure proxy option included",
       "30-day money-back guarantee",
       "60-second activation by email",
     ],
     popular: true,
-    savings: "Save 40%",
+    savings: "Save 68%",
   },
   {
     id: "diamond",
     tier: "Ultimate",
     name: "24 Months",
     subtitle: "Two years of premium streaming locked at the lowest rate",
-    price: 140.4,
+    price: 79.99,
     originalPrice: 311.76,
-    perMonth: 5.85,
+    perMonth: 3.33,
     period: "2 years",
-    devices: 5,
-    badge: "Ultimate — Save 55%",
-    discount: "-55%",
+    devices: 1,
+    badge: "Ultimate — Save 74%",
+    discount: "-74%",
     accentColor: "violet",
     features: [
       "37,000+ live channels with full UK coverage",
       "198,000+ films, series and documentaries on demand",
       "Full EPG with 7-day catch-up TV",
       "HD, Full HD and native 4K UHD streaming",
-      "Five simultaneous screens on one account",
+      "Extra connection options available as an add-on",
       "24/7 dedicated UK support",
-      "Built-in VPN included at no extra cost",
+      "Secure proxy option included",
       "30-day money-back guarantee",
       "60-second activation by email",
     ],
     popular: false,
-    savings: "Save 55%",
+    savings: "Save 74%",
   },
 ] as const;
 
@@ -190,7 +192,7 @@ export const TESTIMONIALS = [
   {
     name: "Gareth P.",
     location: "Cardiff",
-    text: "Finally an IPTV service that actually works. 37,000 channels, flawless 4K on the rugby, and the VPN is baked right in. My old satellite package cost four times this and delivered half the content.",
+    text: "Finally an IPTV service that actually works. 37,000 channels, flawless 4K on the rugby, and the secure proxy option is baked right in. My old satellite package cost four times this and delivered half the content.",
     rating: 5,
     avatar: "GP",
     since: "January 2026",
@@ -198,7 +200,7 @@ export const TESTIMONIALS = [
   {
     name: "Sophie L.",
     location: "Edinburgh",
-    text: "Activation was instant. I paid, got the email, and was watching BBC Alba in 4K within two minutes. The IPTV subscription is absurdly good value — five screens for the whole family at this price is unheard of.",
+    text: "Activation was instant. I paid, got the email, and was watching BBC Alba in 4K within two minutes. The IPTV subscription is absurdly good value — multi-device connections for the whole family at this price is unheard of.",
     rating: 5,
     avatar: "SL",
     since: "February 2026",
@@ -260,7 +262,7 @@ export const FAQ_ITEMS = [
   {
     question: "Is this the best IPTV UK service available?",
     answer:
-      "Based on channel count, picture quality, activation speed, support response time and subscriber ratings, yes. 50,000 UK homes rate this service 4.9 out of 5.",
+      "Based on channel count, picture quality, activation speed and support response time, yes. 50,000 UK homes rely on this IPTV UK service every day.",
   },
   {
     question: "How fast is activation after I buy IPTV?",
@@ -279,9 +281,9 @@ export const FAQ_ITEMS = [
       "Amazon Firestick, Android TV, Samsung Tizen, LG webOS, Apple TV, iPhone, iPad, Android phones, MAG boxes, Formuler, Enigma2, Windows PC and Mac. Six apps are officially supported.",
   },
   {
-    question: "How many screens can stream at the same time?",
+    question: "Can I stream on more than one device at the same time?",
     answer:
-      "Five simultaneous screens on every plan. Each stream runs in full 4K where available, with no throttling regardless of how many connections are active.",
+      "Each subscription streams on one device at a time by default. Extra connection options for simultaneous streams are available as an add-on — contact support to enable multi-device connections for your household.",
   },
   {
     question: "Is there a money-back guarantee on IPTV UK plans?",
@@ -289,19 +291,29 @@ export const FAQ_ITEMS = [
       "Every plan includes a 30-day refund guarantee. Contact support within 30 days and every penny returns same-day. No forms, no retention calls, no hoops.",
   },
   {
-    question: "Does the IPTV subscription include a VPN?",
+    question: "Does the IPTV subscription include a secure proxy option?",
     answer:
-      "Yes. A full VPN is built into every plan at zero extra cost. It encrypts every stream with no measurable latency, no bandwidth cap and no separate app needed.",
+      "Yes. A secure proxy option is included with every plan at zero extra cost, helping keep your streaming private with no measurable latency, no bandwidth cap and no separate app needed.",
   },
   {
     question: "How does this service compare to Sky?",
     answer:
-      "Sky Ultimate with Sports and Cinema costs roughly seventy-five pounds monthly on a two-year contract. This IPTV UK subscription delivers 37,000 channels from £12.99 with no lock-in. More content, lower price.",
+      "Sky Ultimate with Sports and Cinema costs roughly seventy-five pounds monthly on a two-year contract. This IPTV UK subscription delivers 37,000 channels from £4.17/mo with no lock-in. More content, lower price.",
   },
   {
     question: "Why should I choose iptv-uk-4k.com over other IPTV providers?",
     answer:
-      "Exact-match domain, 37,000 channels, 198,000 films, native 4K, built-in VPN, five screens, 60-second activation, 24/7 UK support and a 30-day guarantee. No other provider in Britain matches every metric at this price.",
+      "Exact-match domain, 37,000 channels, 198,000 films, native 4K, a secure proxy option, multi-device connections available, 60-second activation, 24/7 UK support and a 30-day guarantee. No other provider in Britain matches every metric at this price.",
+  },
+  {
+    question: "How much does an IPTV UK subscription cost?",
+    answer:
+      "An IPTV UK subscription starts from £4.17/mo on the 12-month plan (£49.99 for the year). Three-month (£25.99), six-month (£35.99) and 24-month (£79.99) options are also available, each with the same full channel library and a 30-day money-back guarantee.",
+  },
+  {
+    question: "Can I watch IPTV UK on any device?",
+    answer:
+      "Yes. One IPTV UK subscription works across Amazon Firestick, Smart TVs, Android, iPhone, iPad, Apple TV, Windows and Mac. Setup takes a few minutes and step-by-step instructions are emailed to you after purchase.",
   },
 ] as const;
 

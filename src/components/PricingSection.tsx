@@ -113,7 +113,7 @@ export default function PricingSection() {
             <span className="gradient-text">Four Subscription Tiers, One Complete Package</span>
           </h2>
           <p className="mx-auto max-w-2xl text-base text-muted leading-relaxed">
-            Every plan runs on the same UK infrastructure with the same 37,000-channel library, native 4K UHD, built-in VPN and five simultaneous screens. The only variable is commitment length and the discount that comes with it.
+            Every plan runs on the same UK infrastructure with the same 37,000-channel library, native 4K UHD and a secure proxy option, with extra connection options available as an add-on. The only variable is commitment length and the discount that comes with it.
           </p>
         </motion.div>
 

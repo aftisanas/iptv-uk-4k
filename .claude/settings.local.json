@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -s -A 'Mozilla/5.0 \\(compatible; Googlebot/2.1; +http://www.google.com/bot.html\\)' https://iptv-uk-4k.com/sitemap.xml)",
+      "Bash(curl -s -A 'Mozilla/5.0 \\(compatible; Googlebot/2.1; +http://www.google.com/bot.html\\)' https://iptv-uk-4k.com/robots.txt)",
+      "Bash(curl -s -A 'Mozilla/5.0 \\(compatible; Googlebot/2.1; +http://www.google.com/bot.html\\)' https://iptv-uk-4k.com/)",
+      "Bash(grep -oE '<link rel=\"canonical\"[^>]*>|<meta property=\"og:image\"[^>]*>|<meta property=\"og:url\"[^>]*>|\"logo\":\\\\{\"@type\":\"ImageObject\",\"url\":\"[^\"]*\"')",
+      "Bash(grep -oE '<link rel=\"canonical\"[^>]*>|\"logo\":\\\\{\"@type\":\"ImageObject\",\"url\":\"[^\"]*\"')"
+    ]
+  }
+}

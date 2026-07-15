@@ -17,7 +17,7 @@ export default function Footer() {
             <Link href="/" className="flex items-center gap-2.5 mb-4">
               <div className="relative h-12 w-12 shrink-0">
                 <Image
-                  src="/cheap-iptv.webp"
+                  src="/iptv-uk.webp"
                   alt="IPTV UK 4K logo"
                   fill
                   sizes="48px"
@@ -30,7 +30,7 @@ export default function Footer() {
               </span>
             </Link>
             <p className="text-sm text-muted leading-relaxed mb-6">
-              The IPTV UK service 50,000 British homes trust. 37,000 live channels, 198,000 films and series, native 4K UHD and built-in VPN — from £12.99/month.
+              The IPTV UK service 50,000 British homes trust. 37,000 live channels, 198,000 films and series, native 4K UHD and a secure proxy option — from £4.17/month.
             </p>
             <div className="space-y-2">
               <div className="flex items-center gap-2 text-sm text-muted">

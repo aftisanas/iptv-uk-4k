@@ -18,7 +18,7 @@ export default function TestimonialsSection() {
           className="text-center mb-16"
         >
           <span className="inline-block rounded-full bg-amber-50 border border-amber-200 px-4 py-1.5 text-sm font-medium text-amber-700 mb-4">
-            Trustpilot Average 4.9/5
+            Verified UK Subscriber Reviews
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4">
             IPTV UK Reviews &mdash; What British Subscribers{" "}
@@ -29,7 +29,7 @@ export default function TestimonialsSection() {
             <SectionLink href="/#testimonials" className="text-violet-600 hover:text-violet-700 underline-offset-2 hover:underline">
               IPTV reviews
             </SectionLink>{" "}
-            from verified customers across England, Scotland, Wales and Northern Ireland — Trustpilot average holds at 4.9 out of 5.
+            from verified customers across England, Scotland, Wales and Northern Ireland.
           </p>
         </motion.div>
 

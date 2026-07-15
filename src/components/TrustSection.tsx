@@ -19,9 +19,9 @@ const trustItems = [
   },
   {
     icon: Lock,
-    title: "Built-In VPN — Premium IPTV Privacy At No Extra Cost",
+    title: "Secure Proxy Option — Premium IPTV Privacy At No Extra Cost",
     description:
-      "The VPN encrypts every stream with zero latency penalty. No bandwidth cap, no logs, no separate subscription — premium-grade privacy included in every plan from day one.",
+      "The secure proxy option helps keep every stream private with zero latency penalty. No bandwidth cap, no logs, no separate subscription — proxy-secured streaming included in every plan from day one.",
   },
   {
     icon: ServerCog,

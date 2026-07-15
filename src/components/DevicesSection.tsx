@@ -31,7 +31,7 @@ export default function DevicesSection() {
             <SectionLink href="/#pricing" className="text-violet-600 hover:text-violet-700 underline-offset-2 hover:underline">
               IPTV UK subscription
             </SectionLink>{" "}
-            works across every major platform, with five concurrent streams on every plan.
+            works across every major platform, with multi-device connections available on every plan.
           </p>
         </motion.div>
 

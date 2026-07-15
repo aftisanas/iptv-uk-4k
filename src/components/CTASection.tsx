@@ -64,7 +64,7 @@ export default function CTASection() {
             <SectionLink href="/#pricing" className="text-cyan-300 hover:text-cyan-200 underline-offset-2 hover:underline">
               IPTV UK plan
             </SectionLink>{" "}
-            locks the lowest rate while delivering 37,000 channels, 198,000 films, native 4K, built-in VPN and five simultaneous screens. Your first channel plays sixty seconds after payment, with a{" "}
+            locks the lowest rate while delivering 37,000 channels, 198,000 films, native 4K, a secure proxy option and multi-device connections available. Your first channel plays sixty seconds after payment, with a{" "}
             <Link href="/refund" className="text-cyan-300 hover:text-cyan-200 underline-offset-2 hover:underline">
               30-day refund guarantee
             </Link>{" "}
@@ -80,7 +80,7 @@ export default function CTASection() {
               className="group relative flex items-center gap-2.5 rounded-2xl bg-gradient-to-r from-violet-600 via-purple-600 to-cyan-500 px-8 py-4 text-base font-semibold text-white transition-all hover:shadow-2xl hover:shadow-purple-500/30 active:scale-[0.98] w-full sm:w-auto justify-center"
             >
               <Play className="h-5 w-5 fill-current" />
-              Get IPTV UK Now — From £12.99
+              Get IPTV UK Now — From £4.17/mo
               <div className="absolute inset-0 rounded-2xl bg-white/10 opacity-0 transition-opacity group-hover:opacity-100" />
             </SectionLink>
             <SectionLink
@@ -93,7 +93,7 @@ export default function CTASection() {
           </div>
 
           <p className="mt-8 text-sm text-gray-400">
-            Questions? WhatsApp +44 20 0000 0000 or email support@iptv-uk-4k.com — average reply under four minutes.
+            Questions? Email support@iptv-uk-4k.com — average reply under four minutes.
           </p>
         </motion.div>
       </div>

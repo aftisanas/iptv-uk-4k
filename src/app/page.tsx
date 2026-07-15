@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import HeroSection from "@/components/HeroSection";
 import StatsBar from "@/components/StatsBar";
 import FeaturesSection from "@/components/FeaturesSection";
@@ -12,10 +13,37 @@ import {
   CONTACT_EMAIL,
   FAQ_ITEMS,
   PRICING_PLANS,
+  SITE_LOGO_PATH,
+  SITE_LOGO_URL,
   SITE_NAME,
   SITE_URL,
-  TESTIMONIALS,
 } from "@/lib/constants";
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: SITE_URL,
+    languages: {
+      "en-GB": SITE_URL,
+    },
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_GB",
+    siteName: SITE_NAME,
+    url: SITE_URL,
+    title: "IPTV UK 2026 — The Definitive British IPTV Hub In 4K",
+    description:
+      "The IPTV UK service 50,000 homes already trust. 37,000 live channels, 198,000 films, premium 4K streaming, instant activation. Buy IPTV and watch in minutes.",
+    images: [
+      {
+        url: SITE_LOGO_PATH,
+        width: 1200,
+        height: 630,
+        alt: "IPTV UK 4K — Premium British IPTV Subscription",
+      },
+    ],
+  },
+};
 
 export default function HomePage() {
   const organizationId = `${SITE_URL}/#organization`;
@@ -23,7 +51,7 @@ export default function HomePage() {
   const webpageId = `${SITE_URL}/#webpage`;
   const productId = `${SITE_URL}/#product`;
   const breadcrumbId = `${SITE_URL}/#breadcrumb`;
-  const logoUrl = `${SITE_URL}/cheap-iptv.webp`;
+  const logoUrl = SITE_LOGO_URL;
 
   return (
     <>
@@ -56,7 +84,7 @@ export default function HomePage() {
                   url: logoUrl,
                 },
                 description:
-                  "IPTV UK service for British homes — 37,000 live channels, 198,000 films and series, native 4K UHD streaming and built-in VPN, from £12.99.",
+                  "IPTV UK service for British homes — 37,000 live channels, 198,000 films and series, native 4K UHD streaming and a secure proxy option, from £4.17/mo.",
                 areaServed: { "@type": "Country", name: "United Kingdom" },
                 contactPoint: {
                   "@type": "ContactPoint",
@@ -80,7 +108,7 @@ export default function HomePage() {
                 "@type": "WebPage",
                 "@id": webpageId,
                 url: SITE_URL,
-                name: "IPTV UK 2026 | #1 UK IPTV Subscription 4K From £12.99",
+                name: "IPTV UK 2026 | #1 UK IPTV Subscription 4K — £4.17/mo",
                 inLanguage: "en-GB",
                 isPartOf: {
                   "@id": websiteId,
@@ -92,7 +120,7 @@ export default function HomePage() {
                   "@id": breadcrumbId,
                 },
                 description:
-                  "IPTV UK built for British viewers — 37,000 channels, 198,000 films and series, native 4K UHD, built-in VPN, five screens and a 30-day money-back guarantee.",
+                  "IPTV UK built for British viewers — 37,000 channels, 198,000 films and series, native 4K UHD, a secure proxy option, multi-device connections available and a 30-day money-back guarantee.",
               },
               {
                 "@type": "BreadcrumbList",
@@ -127,22 +155,25 @@ export default function HomePage() {
             url: SITE_URL,
             image: [logoUrl],
             description:
-              "IPTV UK subscription with 37,000+ live channels, 198,000+ on-demand films and series, native 4K UHD, five simultaneous screens and built-in VPN — from £12.99.",
+              "IPTV UK subscription with 37,000+ live channels, 198,000+ on-demand films and series, native 4K UHD, a secure proxy option and multi-device connections available — from £4.17/mo.",
             brand: { "@type": "Brand", name: SITE_NAME },
-            offers: PRICING_PLANS.map((plan) => ({
-              "@type": "Offer",
-              name: `${plan.name} IPTV UK Plan`,
-              price: plan.price.toFixed(2),
+            offers: {
+              "@type": "AggregateOffer",
               priceCurrency: "GBP",
+              lowPrice: "4.17",
+              highPrice: PRICING_PLANS.reduce((m, p) => Math.max(m, p.price), 0).toFixed(2),
+              offerCount: PRICING_PLANS.length,
               availability: "https://schema.org/InStock",
-              itemCondition: "https://schema.org/NewCondition",
               url: `${SITE_URL}/#pricing`,
-            })),
-            aggregateRating: {
-              "@type": "AggregateRating",
-              ratingValue: "4.9",
-              reviewCount: "50000",
-              bestRating: "5",
+              offers: PRICING_PLANS.map((plan) => ({
+                "@type": "Offer",
+                name: `${plan.name} IPTV UK Plan`,
+                price: plan.price.toFixed(2),
+                priceCurrency: "GBP",
+                availability: "https://schema.org/InStock",
+                itemCondition: "https://schema.org/NewCondition",
+                url: `${SITE_URL}/#pricing`,
+              })),
             },
           }),
         }}
@@ -160,26 +191,6 @@ export default function HomePage() {
                 "@type": "Answer",
                 text: item.answer,
               },
-            })),
-          }),
-        }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@graph": TESTIMONIALS.map((t, i) => ({
-              "@type": "Review",
-              "@id": `${SITE_URL}/#review-${i + 1}`,
-              itemReviewed: { "@id": productId },
-              author: { "@type": "Person", name: `${t.name} — ${t.location}` },
-              reviewRating: {
-                "@type": "Rating",
-                ratingValue: t.rating.toString(),
-                bestRating: "5",
-              },
-              reviewBody: t.text,
             })),
           }),
         }}

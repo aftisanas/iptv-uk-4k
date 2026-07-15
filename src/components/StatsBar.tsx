@@ -1,47 +1,10 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 import { STATS } from "@/lib/constants";
 
 function AnimatedNumber({ value }: { value: string }) {
-  const ref = useRef<HTMLSpanElement>(null);
-  const inView = useInView(ref, { once: true, amount: 0.2, margin: "0px 0px -10% 0px" });
-  const numericMatch = value.match(/[\d,]+/);
-  const numericStr = numericMatch ? numericMatch[0] : "";
-  const prefix = numericStr ? value.slice(0, value.indexOf(numericStr)) : "";
-  const suffix = numericStr ? value.slice(value.indexOf(numericStr) + numericStr.length) : "";
-  const [displayed, setDisplayed] = useState(numericStr ? `${prefix}0${suffix}` : value);
-
-  useEffect(() => {
-    if (!inView || !numericStr) {
-      if (!numericStr) setDisplayed(value);
-      return;
-    }
-
-    const target = parseInt(numericStr.replace(/,/g, ""), 10);
-    const duration = 900;
-    const steps = 36;
-    const stepTime = duration / steps;
-    let step = 0;
-
-    const timer = setInterval(() => {
-      step++;
-      const progress = step / steps;
-      const easeOut = 1 - Math.pow(1 - progress, 3);
-      const current = Math.round(target * easeOut);
-      setDisplayed(`${prefix}${current.toLocaleString()}${suffix}`);
-
-      if (step >= steps) {
-        setDisplayed(value);
-        clearInterval(timer);
-      }
-    }, stepTime);
-
-    return () => clearInterval(timer);
-  }, [inView, value, numericStr, prefix, suffix]);
-
-  return <span ref={ref}>{displayed}</span>;
+  return <span>{value}</span>;
 }
 
 export default function StatsBar() {

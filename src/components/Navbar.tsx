@@ -47,7 +47,7 @@ export default function Navbar() {
             <Link href="/" className="group flex items-center gap-2.5">
               <div className="relative h-12 w-12 lg:h-14 lg:w-14 shrink-0">
                 <Image
-                  src="/cheap-iptv.webp"
+                  src="/iptv-uk.webp"
                   alt="IPTV UK 4K logo"
                   fill
                   sizes="(min-width: 1024px) 56px, 48px"

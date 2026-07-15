@@ -3,7 +3,7 @@ import { Inter, Outfit } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { SITE_URL } from "@/lib/constants";
+import { SITE_URL, SITE_LOGO_PATH } from "@/lib/constants";
 
 const inter = Inter({
   variable: "--font-sans",
@@ -23,37 +23,14 @@ const outfit = Outfit({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "IPTV UK 2026 | #1 UK IPTV Subscription 4K From £12.99",
+    default: "IPTV UK 2026 | #1 UK IPTV Subscription 4K — £4.17/mo",
     template: "%s | IPTV UK 4K",
   },
   description:
-    "IPTV UK built for British viewers. 37,000 channels, native 4K, built-in VPN, five screens, 60-second activation, 30-day guarantee. The definitive UK IPTV hub.",
-  keywords: [
-    "iptv uk",
-    "iptv uk subscription",
-    "iptv uk channels",
-    "iptv uk 4k",
-    "iptv subscription",
-    "best iptv uk",
-    "iptv providers",
-    "iptv service",
-    "iptv reviews",
-    "buy iptv",
-    "british iptv",
-    "strong iptv",
-    "fast iptv",
-    "premium iptv",
-    "cheap iptv subscription",
-  ],
+    "Best IPTV UK 2026: 37,000 channels, native 4K, secure proxy option, instant activation, 30-day money-back. UK IPTV subscription from £4.17/mo.",
   authors: [{ name: "IPTV UK 4K" }],
   creator: "IPTV UK 4K",
   applicationName: "IPTV UK 4K",
-  alternates: {
-    canonical: "/",
-    languages: {
-      "en-GB": "/",
-    },
-  },
   manifest: "/favicon_io/site.webmanifest",
   icons: {
     icon: [
@@ -73,15 +50,24 @@ export const metadata: Metadata = {
     locale: "en_GB",
     siteName: "IPTV UK 4K",
     url: SITE_URL,
-    title: "IPTV UK 2026 — The Definitive British IPTV Hub In 4K",
+    title: "IPTV UK 2026 | #1 UK IPTV Subscription 4K — £4.17/mo",
     description:
-      "The IPTV UK service 50,000 homes already trust. 37,000 live channels, 198,000 films, premium 4K streaming, instant activation. Buy IPTV and watch in minutes.",
+      "Best IPTV UK 2026: 37,000 channels, native 4K, secure proxy option, instant activation, 30-day money-back. UK IPTV subscription from £4.17/mo.",
+    images: [
+      {
+        url: SITE_LOGO_PATH,
+        width: 1200,
+        height: 630,
+        alt: "IPTV UK 4K — Premium British IPTV Subscription",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "IPTV UK 2026 — The Definitive British IPTV Hub In 4K",
+    title: "IPTV UK 2026 | #1 UK IPTV Subscription 4K — £4.17/mo",
     description:
-      "IPTV UK built for British viewers. 37,000 channels, native 4K, built-in VPN, five screens, 60-second activation, 30-day guarantee. From £12.99.",
+      "Best IPTV UK 2026: 37,000 channels, native 4K, secure proxy option, instant activation, 30-day money-back. UK IPTV subscription from £4.17/mo.",
+    images: [SITE_LOGO_PATH],
   },
   robots: {
     index: true,
