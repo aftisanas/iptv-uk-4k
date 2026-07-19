@@ -5,7 +5,6 @@ import FeaturesSection from "@/components/FeaturesSection";
 import PricingSection from "@/components/PricingSection";
 import DevicesSection from "@/components/DevicesSection";
 import ChannelsSection from "@/components/ChannelsSection";
-import TestimonialsSection from "@/components/TestimonialsSection";
 import FAQSection from "@/components/FAQSection";
 import TrustSection from "@/components/TrustSection";
 import CTASection from "@/components/CTASection";
@@ -31,15 +30,15 @@ export const metadata: Metadata = {
     locale: "en_GB",
     siteName: SITE_NAME,
     url: SITE_URL,
-    title: "IPTV UK 2026 — The Definitive British IPTV Hub In 4K",
+    title: "IPTV UK — 4K UHD Streaming For Every British Home | £4.17/mo",
     description:
-      "The IPTV UK service 50,000 homes already trust. 37,000 live channels, 198,000 films, premium 4K streaming, instant activation. Buy IPTV and watch in minutes.",
+      "IPTV UK subscription with 37,000 live channels, 198,000 films and series, native 4K UHD, extra simultaneous-connection options and a 30-day money-back guarantee — from £4.17/mo.",
     images: [
       {
         url: SITE_LOGO_PATH,
         width: 1200,
         height: 630,
-        alt: "IPTV UK 4K — Premium British IPTV Subscription",
+        alt: "IPTV UK 4K — 4K UHD IPTV subscription for British homes",
       },
     ],
   },
@@ -61,12 +60,10 @@ export default function HomePage() {
       <PricingSection />
       <DevicesSection />
       <ChannelsSection />
-      <TestimonialsSection />
       <FAQSection />
       <TrustSection />
       <CTASection />
 
-      {/* JSON-LD Structured Data */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -84,7 +81,7 @@ export default function HomePage() {
                   url: logoUrl,
                 },
                 description:
-                  "IPTV UK service for British homes — 37,000 live channels, 198,000 films and series, native 4K UHD streaming and a secure proxy option, from £4.17/mo.",
+                  "UK-focused IPTV service — 37,000 live channels, 198,000 films and series, native 4K UHD streaming and an optional Secure Proxy add-on, from £4.17/mo.",
                 areaServed: { "@type": "Country", name: "United Kingdom" },
                 contactPoint: {
                   "@type": "ContactPoint",
@@ -108,7 +105,7 @@ export default function HomePage() {
                 "@type": "WebPage",
                 "@id": webpageId,
                 url: SITE_URL,
-                name: "IPTV UK 2026 | #1 UK IPTV Subscription 4K — £4.17/mo",
+                name: "IPTV UK — 4K UHD Streaming For Every British Home | £4.17/mo",
                 inLanguage: "en-GB",
                 isPartOf: {
                   "@id": websiteId,
@@ -120,7 +117,7 @@ export default function HomePage() {
                   "@id": breadcrumbId,
                 },
                 description:
-                  "IPTV UK built for British viewers — 37,000 channels, 198,000 films and series, native 4K UHD, a secure proxy option, multi-device connections available and a 30-day money-back guarantee.",
+                  "UK IPTV subscription for British viewers — 37,000 channels, 198,000 films and series, native 4K UHD, an optional Secure Proxy add-on, extra simultaneous-connection options and a 30-day money-back guarantee.",
               },
               {
                 "@type": "BreadcrumbList",
@@ -155,7 +152,7 @@ export default function HomePage() {
             url: SITE_URL,
             image: [logoUrl],
             description:
-              "IPTV UK subscription with 37,000+ live channels, 198,000+ on-demand films and series, native 4K UHD, a secure proxy option and multi-device connections available — from £4.17/mo.",
+              "IPTV UK subscription with 37,000+ live channels, 198,000+ on-demand films and series, native 4K UHD, an optional Secure Proxy add-on and extra simultaneous-connection options — from £4.17/mo.",
             brand: { "@type": "Brand", name: SITE_NAME },
             offers: {
               "@type": "AggregateOffer",

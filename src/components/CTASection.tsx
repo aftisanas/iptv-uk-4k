@@ -1,17 +1,14 @@
-"use client";
-
-import { motion } from "framer-motion";
 import { Play, MessageCircle, Sparkles } from "lucide-react";
 import Link from "next/link";
 import SectionLink from "./SectionLink";
+import MotionReveal from "./MotionReveal";
+import { CONTACT_EMAIL } from "@/lib/constants";
 
 export default function CTASection() {
   return (
     <section className="relative py-11 lg:py-16 overflow-hidden">
-      {/* Premium gradient background */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#0f0524] via-[#1a0a3e] to-[#0c1445]" />
 
-      {/* Aurora blobs */}
       <div
         className="aurora-blob w-[500px] h-[500px] bg-purple-600/20 -top-20 -left-20"
         style={{ animationDelay: "0s" }}
@@ -25,11 +22,9 @@ export default function CTASection() {
         style={{ animationDelay: "10s" }}
       />
 
-      {/* Radial overlays */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(124,58,237,0.12),transparent_60%)]" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(6,182,212,0.08),transparent_50%)]" />
 
-      {/* Grid */}
       <div
         className="absolute inset-0 opacity-[0.03]"
         style={{
@@ -39,24 +34,14 @@ export default function CTASection() {
       />
 
       <div className="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-        >
-          {/* Badge */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            className="inline-flex items-center gap-2 rounded-full border border-purple-400/20 bg-white/[0.07] backdrop-blur-md px-5 py-2 text-sm text-purple-300 mb-8"
-          >
+        <MotionReveal y={30}>
+          <div className="inline-flex items-center gap-2 rounded-full border border-purple-400/20 bg-white/[0.07] backdrop-blur-md px-5 py-2 text-sm text-purple-300 mb-8">
             <Sparkles className="h-4 w-4 text-cyan-400" />
-            <span className="font-medium">Join 50,000+ UK Households</span>
-          </motion.div>
+            <span className="font-medium">UK IPTV Subscription — From £4.17/mo</span>
+          </div>
 
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
-            Join 50,000 British Homes &mdash; Get IPTV UK And{" "}
+            Get IPTV UK And{" "}
             <span className="gradient-text-hero">Stream Tonight</span>
           </h2>
           <p className="mx-auto max-w-2xl text-lg text-gray-300/90 mb-10 leading-relaxed">
@@ -64,13 +49,13 @@ export default function CTASection() {
             <SectionLink href="/#pricing" className="text-cyan-300 hover:text-cyan-200 underline-offset-2 hover:underline">
               IPTV UK plan
             </SectionLink>{" "}
-            locks the lowest rate while delivering 37,000 channels, 198,000 films, native 4K, a secure proxy option and multi-device connections available. Your first channel plays sixty seconds after payment, with a{" "}
+            locks the lowest rate while delivering 37,000 channels, 198,000 films, native 4K UHD and extra simultaneous-connection options at checkout. Your first channel typically plays within minutes of confirmed payment, with a{" "}
             <Link href="/refund" className="text-cyan-300 hover:text-cyan-200 underline-offset-2 hover:underline">
               30-day refund guarantee
             </Link>{" "}
             and{" "}
             <Link href="/contact" className="text-cyan-300 hover:text-cyan-200 underline-offset-2 hover:underline">
-              24/7 UK support
+              24/7 support
             </Link>.
           </p>
 
@@ -88,14 +73,14 @@ export default function CTASection() {
               className="group flex items-center gap-2.5 rounded-2xl border border-white/15 bg-white/[0.06] backdrop-blur-sm px-8 py-4 text-base font-semibold text-white transition-all hover:border-purple-400/30 hover:bg-white/10 w-full sm:w-auto justify-center"
             >
               <MessageCircle className="h-5 w-5 text-cyan-400" />
-              Chat With Our UK Team
+              Chat With Our Team
             </SectionLink>
           </div>
 
           <p className="mt-8 text-sm text-gray-400">
-            Questions? Email support@iptv-uk-4k.com — average reply under four minutes.
+            Questions? Email {CONTACT_EMAIL} — average reply measured in minutes.
           </p>
-        </motion.div>
+        </MotionReveal>
       </div>
     </section>
   );

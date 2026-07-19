@@ -5,7 +5,29 @@
       "Bash(curl -s -A 'Mozilla/5.0 \\(compatible; Googlebot/2.1; +http://www.google.com/bot.html\\)' https://iptv-uk-4k.com/robots.txt)",
       "Bash(curl -s -A 'Mozilla/5.0 \\(compatible; Googlebot/2.1; +http://www.google.com/bot.html\\)' https://iptv-uk-4k.com/)",
       "Bash(grep -oE '<link rel=\"canonical\"[^>]*>|<meta property=\"og:image\"[^>]*>|<meta property=\"og:url\"[^>]*>|\"logo\":\\\\{\"@type\":\"ImageObject\",\"url\":\"[^\"]*\"')",
-      "Bash(grep -oE '<link rel=\"canonical\"[^>]*>|\"logo\":\\\\{\"@type\":\"ImageObject\",\"url\":\"[^\"]*\"')"
+      "Bash(grep -oE '<link rel=\"canonical\"[^>]*>|\"logo\":\\\\{\"@type\":\"ImageObject\",\"url\":\"[^\"]*\"')",
+      "Bash(curl -sL https://iptv-uk-4k.com/ -o /tmp/home.html -w \"%{http_code}\\\\n\")",
+      "Read(//tmp/**)",
+      "WebFetch(domain:iptv-uk-4k.com)",
+      "Bash(curl -sL -A \"Mozilla/5.0\" https://iptv-uk-4k.com/ -o /tmp/home.html -w \"HTTP:%{http_code}\\\\n\")",
+      "Bash(curl -sL -A \"Mozilla/5.0\" https://iptv-uk-4k.com/blog -o /tmp/blog.html -w \"HTTP:%{http_code}\\\\n\")",
+      "Bash(curl -sL -A \"Mozilla/5.0\" https://iptv-uk-4k.com/contact -o /tmp/contact.html -w \"HTTP:%{http_code}\\\\n\")",
+      "Bash(curl -sL -A \"Mozilla/5.0\" https://iptv-uk-4k.com/llms.txt -o /tmp/llms.txt -w \"HTTP:%{http_code}\\\\n\")",
+      "Bash(curl -sL -A \"Mozilla/5.0\" https://iptv-uk-4k.com/.well-known/ai.txt -o /tmp/aitxt.txt -w \"HTTP:%{http_code}\\\\n\")",
+      "Bash(curl -sI https://iptv-uk-4k.com/iptv-uk.webp)",
+      "Bash(curl -sL https://iptv-uk-4k.com/ -o /tmp/hp.html)",
+      "Bash(curl -sL https://iptv-uk-4k.com/tutorials -o /tmp/tuts.html -w \"%{http_code}\\\\n\")",
+      "Bash(curl -sL https://iptv-uk-4k.com/contact -o /tmp/contact.html -w \"%{http_code}\\\\n\")",
+      "Bash(curl -sL https://iptv-uk-4k.com/dmca -o /tmp/dmca.html -w \"%{http_code}\\\\n\")",
+      "Bash(curl -sL https://iptv-uk-4k.com/privacy -o /tmp/privacy.html -w \"%{http_code}\\\\n\")",
+      "Bash(curl -sL https://iptv-uk-4k.com/terms -o /tmp/terms.html -w \"%{http_code}\\\\n\")",
+      "Bash(curl -sL https://iptv-uk-4k.com/refund -o /tmp/refund.html -w \"%{http_code}\\\\n\")",
+      "Bash(grep -oE '<p[^>]*>[^<]{20,300}' /tmp/dmca.html)",
+      "Bash(curl -sS -o /dev/null -w \"llms.txt: %{http_code}\\\\n\" https://iptv-uk-4k.com/llms.txt)",
+      "Bash(curl -sS -o /dev/null -w \"ai.txt: %{http_code}\\\\n\" https://iptv-uk-4k.com/.well-known/ai.txt)",
+      "Bash(curl -sS -o /dev/null -w \"robots: %{http_code}\\\\n\" https://iptv-uk-4k.com/robots.txt)",
+      "Bash(curl *)",
+      "Bash(npm run *)"
     ]
   }
 }

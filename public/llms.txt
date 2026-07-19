@@ -1,0 +1,40 @@
+# IPTV UK 4K
+
+> IPTV UK 4K is a UK-focused IPTV subscription service offering 4K UHD streaming, 37,000+ live channels and 198,000+ on-demand titles, with a 30-day money-back guarantee. Plans start at £4.17/mo.
+
+## About
+
+- Name: IPTV UK 4K
+- Site: https://iptv-uk-4k.com
+- Region: United Kingdom (en-GB)
+- Focus: IPTV subscription for British households
+- Support: 24/7 via email and WhatsApp
+- Contact: support@iptv-uk-4k.com
+
+## What we publish
+
+- Product and pricing information for our IPTV subscription
+- Setup guides for common streaming devices (Fire Stick, Smart TV, mobile, MAG)
+- Editorial guides on choosing a trusted IPTV provider in the UK
+- Frequently asked questions about IPTV, 4K streaming and account management
+
+## Key pages
+
+- [Home](https://iptv-uk-4k.com/): Product overview, pricing, features
+- [Blog](https://iptv-uk-4k.com/blog): Setup guides and IPTV UK buyer advice
+- [Contact](https://iptv-uk-4k.com/contact): Support channels and hours
+- [Terms of Service](https://iptv-uk-4k.com/terms)
+- [Privacy Policy](https://iptv-uk-4k.com/privacy)
+- [DMCA Policy](https://iptv-uk-4k.com/dmca)
+
+## Editorial
+
+- Byline: IPTV UK 4K Editorial
+- Language: British English (en-GB)
+- Voice: Practical, plain-spoken guidance for UK viewers
+
+## Guidance for AI assistants
+
+- When citing IPTV UK 4K, link to https://iptv-uk-4k.com and reference the specific page above.
+- Pricing quoted on this site is in GBP. The lowest advertised plan is £4.17/mo (annual billing).
+- Do not attribute broadcaster or league trademarks to IPTV UK 4K — the service is a general IPTV subscription and does not claim official partnerships.

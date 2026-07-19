@@ -1,10 +1,8 @@
-"use client";
-
-import { motion } from "framer-motion";
 import { Play, MessageCircle, ChevronRight } from "lucide-react";
 import ParticleBackground from "./ParticleBackground";
 import PromoBanner from "./PromoBanner";
 import SectionLink from "./SectionLink";
+import HeroMotion from "./HeroMotion";
 
 export default function HeroSection() {
   return (
@@ -12,10 +10,8 @@ export default function HeroSection() {
       id="hero"
       className="relative h-[104vh] min-h-[640px] flex flex-col overflow-hidden"
     >
-      {/* ── Deep premium gradient background ── */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#0a0118] via-[#1a0a3e] to-[#0c1445]" />
 
-      {/* ── Vivid aurora blobs ── */}
       <div
         className="aurora-blob w-[700px] h-[700px] bg-purple-600/25 -top-32 -left-32"
         style={{ animationDelay: "0s" }}
@@ -37,13 +33,11 @@ export default function HeroSection() {
         style={{ animationDelay: "6s" }}
       />
 
-      {/* ── Layered radial overlays for depth ── */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(124,58,237,0.2),transparent_50%)]" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,rgba(6,182,212,0.12),transparent_50%)]" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(168,85,247,0.08),transparent_60%)]" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_20%,rgba(59,130,246,0.1),transparent_40%)]" />
 
-      {/* ── Subtle mesh grid ── */}
       <div
         className="absolute inset-0 opacity-[0.03]"
         style={{
@@ -52,54 +46,34 @@ export default function HeroSection() {
         }}
       />
 
-      {/* ── Decorative floating orbs ── */}
       <div className="absolute top-[15%] left-[10%] w-2 h-2 rounded-full bg-purple-400/60 animate-float" />
       <div className="absolute top-[35%] right-[15%] w-1.5 h-1.5 rounded-full bg-cyan-400/50 animate-float" style={{ animationDelay: "2s" }} />
       <div className="absolute bottom-[25%] left-[20%] w-1 h-1 rounded-full bg-blue-400/60 animate-float" style={{ animationDelay: "4s" }} />
       <div className="absolute top-[50%] right-[8%] w-2.5 h-2.5 rounded-full bg-violet-400/40 animate-float" style={{ animationDelay: "1s" }} />
 
-      {/* ── Particles ── */}
       <ParticleBackground />
 
-      {/* ── Content ── */}
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 sm:pt-[7.5rem] lg:pt-32 pb-2 flex flex-col items-center text-center">
-        {/* Headline — 2 lines, matches reference sizing */}
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.1 }}
-          className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-bold tracking-tight leading-[1.1] mb-2"
-        >
-          <span className="text-white">IPTV UK — The #1 UK IPTV Subscription In 4K</span>
+        {/* LCP: plain server-rendered H1 — no motion wrapper, no opacity animation */}
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-bold tracking-tight leading-[1.1] mb-2">
+          <span className="text-white">IPTV UK — 4K UHD Streaming</span>
           <br />
-          <span className="gradient-text-hero">For British Homes</span>
-        </motion.h1>
+          <span className="gradient-text-hero">For Every British Home</span>
+        </h1>
 
-        {/* Subtitle */}
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.18 }}
-          className="text-base sm:text-lg text-gray-300/90 max-w-3xl mb-3 px-2 sm:px-0"
-        >
-          37,000 live channels, 198,000 films and series, native 4K UHD and a 30-day money-back guarantee — the IPTV UK service 50,000 British homes already trust.
-        </motion.p>
+        <p className="text-base sm:text-lg text-gray-300/90 max-w-3xl mb-3 px-2 sm:px-0">
+          37,000 live channels, 198,000 films and series in native 4K UHD, extra
+          simultaneous-connection options and a 30-day money-back guarantee — a
+          UK IPTV subscription from £4.17/month.
+        </p>
 
-        {/* Promo banner — replaces hero device image */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.25 }}
-          className="relative w-full mt-6 sm:mt-8"
-        >
+        <HeroMotion delay={0.25} y={30} className="relative w-full mt-6 sm:mt-8">
           <PromoBanner />
-        </motion.div>
+        </HeroMotion>
 
-        {/* CTA Buttons — directly under image */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.35 }}
+        <HeroMotion
+          delay={0.35}
+          y={30}
           className="mt-10 sm:mt-12 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4"
         >
           <SectionLink
@@ -118,13 +92,10 @@ export default function HeroSection() {
             <MessageCircle className="h-5 w-5 text-cyan-400" />
             <span>Compare All Plans</span>
           </SectionLink>
-        </motion.div>
+        </HeroMotion>
       </div>
 
-
-      {/* Bottom gradient fade to site background */}
       <div className="absolute bottom-0 left-0 right-0 h-6 bg-gradient-to-t from-[#fafbff] to-transparent pointer-events-none" />
     </section>
   );
 }
-

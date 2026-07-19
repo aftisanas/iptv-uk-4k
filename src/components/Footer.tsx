@@ -1,5 +1,3 @@
-"use client";
-
 import Link from "next/link";
 import Image from "next/image";
 import { Mail, MapPin } from "lucide-react";
@@ -10,9 +8,7 @@ export default function Footer() {
   return (
     <footer className="relative border-t border-violet-100/50 bg-gradient-to-b from-[#fafbff] to-white">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* Main footer */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10 py-16 lg:max-w-5xl lg:mx-auto">
-          {/* Brand */}
           <div className="lg:col-span-1">
             <Link href="/" className="flex items-center gap-2.5 mb-4">
               <div className="relative h-12 w-12 shrink-0">
@@ -30,7 +26,7 @@ export default function Footer() {
               </span>
             </Link>
             <p className="text-sm text-muted leading-relaxed mb-6">
-              The IPTV UK service 50,000 British homes trust. 37,000 live channels, 198,000 films and series, native 4K UHD and a secure proxy option — from £4.17/month.
+              A UK-focused IPTV service with 37,000 live channels, 198,000 films and series, native 4K UHD and an optional Secure Proxy add-on — from £4.17/month.
             </p>
             <div className="space-y-2">
               <div className="flex items-center gap-2 text-sm text-muted">
@@ -39,12 +35,11 @@ export default function Footer() {
               </div>
               <div className="flex items-center gap-2 text-sm text-muted">
                 <MapPin className="h-4 w-4 text-violet-500/60" />
-                <span>London, United Kingdom</span>
+                <span>United Kingdom</span>
               </div>
             </div>
           </div>
 
-          {/* Quick Links */}
           <div className="lg:justify-self-center">
             <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider mb-4">
               Quick Links
@@ -63,7 +58,6 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Legal */}
           <div className="lg:justify-self-start">
             <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider mb-4">
               Legal
@@ -84,7 +78,6 @@ export default function Footer() {
 
         </div>
 
-        {/* Bottom bar */}
         <div className="border-t border-violet-100/50 py-6">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
             <p className="text-xs text-muted text-center sm:text-left">

@@ -1,8 +1,6 @@
-"use client";
-
-import { motion } from "framer-motion";
 import { Shield, Wifi, Lock, ServerCog } from "lucide-react";
 import Link from "next/link";
+import MotionReveal from "./MotionReveal";
 
 const trustItems = [
   {
@@ -13,21 +11,21 @@ const trustItems = [
   },
   {
     icon: Wifi,
-    title: "99.9% Uptime On Strong IPTV Servers",
+    title: "UK-Hosted Infrastructure — Stable Streaming, Live Status",
     description:
-      "A live status page tracks performance minute by minute. If uptime falls below 99.9 percent, service credits apply automatically. Strong UK infrastructure is the foundation of every streaming claim.",
+      "A live status page tracks performance minute by minute. If the service is degraded, credits and refunds are applied without you having to ask. Stable UK infrastructure is the foundation of every streaming claim.",
   },
   {
     icon: Lock,
-    title: "Secure Proxy Option — Premium IPTV Privacy At No Extra Cost",
+    title: "Optional Secure Proxy Add-On — Privacy On Shared Networks",
     description:
-      "The secure proxy option helps keep every stream private with zero latency penalty. No bandwidth cap, no logs, no separate subscription — proxy-secured streaming included in every plan from day one.",
+      "Enable an encrypted route at checkout when you want an extra layer of privacy. No bandwidth cap, no logs, no separate subscription — a single line-item on the order at the price shown in the modal.",
   },
   {
     icon: ServerCog,
-    title: "24/7 UK Support — A British IPTV Service That Never Closes",
+    title: "24/7 English-Language Support — Around The Clock",
     description:
-      "A named British team answers live chat, WhatsApp and email around the clock. Average first response: under four minutes — support quality that matches the streaming quality.",
+      "Live chat, WhatsApp and email are answered around the clock by an English-speaking support team. Average first response is measured in minutes, not hours.",
   },
 ];
 
@@ -37,12 +35,7 @@ export default function TrustSection() {
       <div className="absolute inset-0 section-gradient-2" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
+        <MotionReveal y={20} className="text-center mb-16">
           <span className="inline-block rounded-full bg-emerald-50 border border-emerald-200 px-4 py-1.5 text-sm font-medium text-emerald-700 mb-4">
             Four Commitments You Can Verify
           </span>
@@ -56,24 +49,19 @@ export default function TrustSection() {
               same-day refund
             </Link>.
           </p>
-        </motion.div>
+        </MotionReveal>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {trustItems.map((item, i) => (
-            <motion.div
-              key={item.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="group text-center"
-            >
-              <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl border border-emerald-100 bg-gradient-to-br from-emerald-50 to-cyan-50 transition-all group-hover:border-emerald-200 group-hover:bg-emerald-100 group-hover:shadow-lg group-hover:shadow-emerald-100/50">
-                <item.icon className="h-7 w-7 text-emerald-600" />
+            <MotionReveal key={item.title} delay={i * 0.1} y={20}>
+              <div className="group text-center">
+                <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl border border-emerald-100 bg-gradient-to-br from-emerald-50 to-cyan-50 transition-all group-hover:border-emerald-200 group-hover:bg-emerald-100 group-hover:shadow-lg group-hover:shadow-emerald-100/50">
+                  <item.icon className="h-7 w-7 text-emerald-600" />
+                </div>
+                <h3 className="text-lg font-semibold text-foreground mb-2">{item.title}</h3>
+                <p className="text-sm text-muted leading-relaxed">{item.description}</p>
               </div>
-              <h3 className="text-lg font-semibold text-foreground mb-2">{item.title}</h3>
-              <p className="text-sm text-muted leading-relaxed">{item.description}</p>
-            </motion.div>
+            </MotionReveal>
           ))}
         </div>
       </div>

@@ -23,11 +23,11 @@ const outfit = Outfit({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "IPTV UK 2026 | #1 UK IPTV Subscription 4K — £4.17/mo",
+    default: "IPTV UK — 4K UHD Streaming For Every British Home | £4.17/mo",
     template: "%s | IPTV UK 4K",
   },
   description:
-    "Best IPTV UK 2026: 37,000 channels, native 4K, secure proxy option, instant activation, 30-day money-back. UK IPTV subscription from £4.17/mo.",
+    "IPTV UK subscription with 37,000 live channels, 198,000 films and series, native 4K UHD, optional Secure Proxy add-on and a 30-day money-back guarantee — from £4.17/mo.",
   authors: [{ name: "IPTV UK 4K" }],
   creator: "IPTV UK 4K",
   applicationName: "IPTV UK 4K",
@@ -50,23 +50,23 @@ export const metadata: Metadata = {
     locale: "en_GB",
     siteName: "IPTV UK 4K",
     url: SITE_URL,
-    title: "IPTV UK 2026 | #1 UK IPTV Subscription 4K — £4.17/mo",
+    title: "IPTV UK — 4K UHD Streaming For Every British Home | £4.17/mo",
     description:
-      "Best IPTV UK 2026: 37,000 channels, native 4K, secure proxy option, instant activation, 30-day money-back. UK IPTV subscription from £4.17/mo.",
+      "IPTV UK subscription with 37,000 live channels, 198,000 films and series, native 4K UHD, optional Secure Proxy add-on and a 30-day money-back guarantee — from £4.17/mo.",
     images: [
       {
         url: SITE_LOGO_PATH,
         width: 1200,
         height: 630,
-        alt: "IPTV UK 4K — Premium British IPTV Subscription",
+        alt: "IPTV UK 4K — 4K UHD IPTV subscription for British homes",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "IPTV UK 2026 | #1 UK IPTV Subscription 4K — £4.17/mo",
+    title: "IPTV UK — 4K UHD Streaming For Every British Home | £4.17/mo",
     description:
-      "Best IPTV UK 2026: 37,000 channels, native 4K, secure proxy option, instant activation, 30-day money-back. UK IPTV subscription from £4.17/mo.",
+      "IPTV UK subscription with 37,000 live channels, 198,000 films and series, native 4K UHD, optional Secure Proxy add-on and a 30-day money-back guarantee — from £4.17/mo.",
     images: [SITE_LOGO_PATH],
   },
   robots: {

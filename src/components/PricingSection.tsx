@@ -113,7 +113,7 @@ export default function PricingSection() {
             <span className="gradient-text">Four Subscription Tiers, One Complete Package</span>
           </h2>
           <p className="mx-auto max-w-2xl text-base text-muted leading-relaxed">
-            Every plan runs on the same UK infrastructure with the same 37,000-channel library, native 4K UHD and a secure proxy option, with extra connection options available as an add-on. The only variable is commitment length and the discount that comes with it.
+            Every plan runs on the same UK infrastructure with the same 37,000-channel library and native 4K UHD. Add an optional Secure Proxy and extra simultaneous-connection options at checkout — the only variable is commitment length and the discount that comes with it.
           </p>
         </motion.div>
 
@@ -273,6 +273,7 @@ export default function PricingSection() {
         onClose={() => setSelectedPlan(null)}
         planName={selectedPlan ? toAccessLabel(selectedPlan.name) : ""}
         planPrice={selectedPlan?.price ?? 0}
+        proxyPrice={selectedPlan?.proxyPrice ?? 0}
       />
     </section>
   );
