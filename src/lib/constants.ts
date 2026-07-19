@@ -11,7 +11,7 @@ export const AUTHOR_BYLINE = {
 
 export const WHATSAPP_NUMBER = "447878757831";
 
-export const EXTRA_CONNECTION_PRICE = 8;
+export const EXTRA_CONNECTION_PRICE = 7.25;
 export const EXTRA_CONNECTIONS_MAX = 5;
 
 export const CHECKOUT_COPY = {
@@ -110,7 +110,7 @@ export const PRICING_PLANS = [
     perMonth: 8.66,
     period: "3 months",
     devices: 1,
-    proxyPrice: 6,
+    proxyPrice: 4.75,
     badge: "Starter",
     discount: "-57%",
     accentColor: "violet",
@@ -138,7 +138,7 @@ export const PRICING_PLANS = [
     perMonth: 6.00,
     period: "6 months",
     devices: 1,
-    proxyPrice: 8,
+    proxyPrice: 9.50,
     badge: "Half-Year Value",
     discount: "-70%",
     accentColor: "violet",
@@ -166,7 +166,7 @@ export const PRICING_PLANS = [
     perMonth: 4.17,
     period: "year",
     devices: 1,
-    proxyPrice: 12,
+    proxyPrice: 19.00,
     badge: "Most Popular — Save 68%",
     discount: "-68%",
     accentColor: "blue",
@@ -194,7 +194,7 @@ export const PRICING_PLANS = [
     perMonth: 3.33,
     period: "2 years",
     devices: 1,
-    proxyPrice: 18,
+    proxyPrice: 38.00,
     badge: "Ultimate — Save 74%",
     discount: "-74%",
     accentColor: "violet",
