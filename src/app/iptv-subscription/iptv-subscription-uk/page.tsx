@@ -14,9 +14,9 @@ import {
 const PAGE_PATH = "/iptv-subscription/iptv-subscription-uk";
 const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
 const PAGE_TITLE =
-  "IPTV Subscription UK — 37,000 Channels In 4K From £4.17/mo";
+  "IPTV Subscription UK Explained — Buyer's Guide for British Homes";
 const PAGE_DESCRIPTION =
-  "IPTV subscription UK with 37,000 live channels, 198,000 films and series, native 4K UHD, UK-focused edge routing and a 30-day money-back guarantee. Plans from £4.17 a month.";
+  "How an IPTV subscription actually works for a UK household — versus Sky and Virgin, what the channel numbers cover, how the pricing tiers stack up and what to check before you sign up.";
 
 export const metadata: Metadata = {
   title: { absolute: PAGE_TITLE },
@@ -258,15 +258,15 @@ export default function IptvSubscriptionUkNestedPage() {
               <li aria-hidden="true">/</li>
               <li>
                 <Link
-                  href="/iptv-subscription-uk"
+                  href="/iptv-subscription"
                   className="hover:text-violet-700"
                 >
-                  IPTV Subscription UK
+                  IPTV Subscription
                 </Link>
               </li>
               <li aria-hidden="true">/</li>
               <li className="text-foreground font-medium" aria-current="page">
-                Subscription Article
+                Subscription UK Guide
               </li>
             </ol>
           </nav>
@@ -276,30 +276,29 @@ export default function IptvSubscriptionUkNestedPage() {
           </span>
 
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-foreground leading-[1.15] mb-5">
-            IPTV Subscription UK —{" "}
+            IPTV Subscription UK Explained —{" "}
             <span className="gradient-text">
-              37,000 Channels, 4K UHD, From £4.17
+              Buyer&rsquo;s Guide for British Homes
             </span>
           </h1>
 
           <p className="text-base lg:text-lg text-muted leading-relaxed">
-            Our IPTV subscription UK delivers 37,000 live channels and 198,000
-            films and series for as little as £4.17 a month on the 24-month
-            plan. Built for UK viewers, served from UK-focused edge
-            infrastructure, with native 4K UHD where the feed supports it,
-            English-language 24/7 support and a 30-day money-back guarantee.
-            Compare with the sibling{" "}
+            An honest walkthrough of what an IPTV subscription actually is for
+            a UK household in 2026 — how it stacks up against Sky and Virgin,
+            what the 37,000-channel figure really covers, how the four
+            subscription terms are priced and what to check before you sign
+            up. When you&rsquo;re ready to buy, head to the{" "}
+            <Link href="/iptv-subscription-uk" className={linkCls}>
+              transactional IPTV Subscription UK page
+            </Link>{" "}
+            or the sibling{" "}
             <Link
               href="/iptv-subscription/iptv-uk-subscription"
               className={linkCls}
             >
               IPTV UK subscription article
             </Link>{" "}
-            or the{" "}
-            <Link href="/iptv-subscription-uk" className={linkCls}>
-              term-by-term comparison
-            </Link>{" "}
-            to pick the framing that suits you.
+            for a deeper look at the channel catalogue and activation flow.
           </p>
         </div>
       </section>
@@ -488,13 +487,13 @@ export default function IptvSubscriptionUkNestedPage() {
                   {
                     "@type": "ListItem",
                     position: 2,
-                    name: "IPTV Subscription UK",
-                    item: `${SITE_URL}/iptv-subscription-uk`,
+                    name: "IPTV Subscription",
+                    item: `${SITE_URL}/iptv-subscription`,
                   },
                   {
                     "@type": "ListItem",
                     position: 3,
-                    name: "IPTV Subscription UK Article",
+                    name: "IPTV Subscription UK Guide",
                     item: PAGE_URL,
                   },
                 ],

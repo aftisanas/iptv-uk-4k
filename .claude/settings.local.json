@@ -27,7 +27,8 @@
       "Bash(curl -sS -o /dev/null -w \"ai.txt: %{http_code}\\\\n\" https://iptv-uk-4k.com/.well-known/ai.txt)",
       "Bash(curl -sS -o /dev/null -w \"robots: %{http_code}\\\\n\" https://iptv-uk-4k.com/robots.txt)",
       "Bash(curl *)",
-      "Bash(npm run *)"
+      "Bash(npm run *)",
+      "Bash(npm start *)"
     ]
   }
 }

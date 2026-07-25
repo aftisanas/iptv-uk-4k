@@ -48,9 +48,11 @@ export default function HomePage() {
   const organizationId = `${SITE_URL}/#organization`;
   const websiteId = `${SITE_URL}/#website`;
   const webpageId = `${SITE_URL}/#webpage`;
-  const productId = `${SITE_URL}/#product`;
+  const serviceId = `${SITE_URL}/#service`;
   const breadcrumbId = `${SITE_URL}/#breadcrumb`;
   const logoUrl = SITE_LOGO_URL;
+  const lowPrice = Math.min(...PRICING_PLANS.map((p) => p.price)).toFixed(2);
+  const highPrice = Math.max(...PRICING_PLANS.map((p) => p.price)).toFixed(2);
 
   return (
     <>
@@ -97,8 +99,14 @@ export default function HomePage() {
                 name: SITE_NAME,
                 url: SITE_URL,
                 inLanguage: "en-GB",
-                publisher: {
-                  "@id": organizationId,
+                publisher: { "@id": organizationId },
+                potentialAction: {
+                  "@type": "SearchAction",
+                  target: {
+                    "@type": "EntryPoint",
+                    urlTemplate: `${SITE_URL}/blog?q={search_term_string}`,
+                  },
+                  "query-input": "required name=search_term_string",
                 },
               },
               {
@@ -129,49 +137,44 @@ export default function HomePage() {
                     name: "Home",
                     item: SITE_URL,
                   },
-                  {
-                    "@type": "ListItem",
-                    position: 2,
-                    name: "IPTV UK",
-                    item: `${SITE_URL}/#features`,
-                  },
                 ],
               },
+              {
+                "@type": "Service",
+                "@id": serviceId,
+                serviceType: "IPTV UK Subscription",
+                name: "IPTV UK 4K — IPTV UK Subscription",
+                url: SITE_URL,
+                description:
+                  "IPTV UK subscription with 37,000+ live channels, 198,000+ on-demand films and series, native 4K UHD, an optional Secure Proxy add-on and extra simultaneous-connection options.",
+                provider: { "@id": organizationId },
+                areaServed: { "@type": "Country", name: "United Kingdom" },
+                audience: {
+                  "@type": "Audience",
+                  geographicArea: {
+                    "@type": "Country",
+                    name: "United Kingdom",
+                  },
+                },
+                offers: {
+                  "@type": "AggregateOffer",
+                  priceCurrency: "GBP",
+                  lowPrice,
+                  highPrice,
+                  offerCount: String(PRICING_PLANS.length),
+                  availability: "https://schema.org/InStock",
+                  url: `${SITE_URL}/#pricing`,
+                  offers: PRICING_PLANS.map((plan) => ({
+                    "@type": "Offer",
+                    name: `${plan.name} IPTV UK Plan`,
+                    price: plan.price.toFixed(2),
+                    priceCurrency: "GBP",
+                    availability: "https://schema.org/InStock",
+                    url: `${SITE_URL}/#pricing`,
+                  })),
+                },
+              },
             ],
-          }),
-        }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Product",
-            "@id": productId,
-            name: "IPTV UK Subscription",
-            url: SITE_URL,
-            image: [logoUrl],
-            description:
-              "IPTV UK subscription with 37,000+ live channels, 198,000+ on-demand films and series, native 4K UHD, an optional Secure Proxy add-on and extra simultaneous-connection options — from £4.17/mo.",
-            brand: { "@type": "Brand", name: SITE_NAME },
-            offers: {
-              "@type": "AggregateOffer",
-              priceCurrency: "GBP",
-              lowPrice: "4.17",
-              highPrice: PRICING_PLANS.reduce((m, p) => Math.max(m, p.price), 0).toFixed(2),
-              offerCount: PRICING_PLANS.length,
-              availability: "https://schema.org/InStock",
-              url: `${SITE_URL}/#pricing`,
-              offers: PRICING_PLANS.map((plan) => ({
-                "@type": "Offer",
-                name: `${plan.name} IPTV UK Plan`,
-                price: plan.price.toFixed(2),
-                priceCurrency: "GBP",
-                availability: "https://schema.org/InStock",
-                itemCondition: "https://schema.org/NewCondition",
-                url: `${SITE_URL}/#pricing`,
-              })),
-            },
           }),
         }}
       />

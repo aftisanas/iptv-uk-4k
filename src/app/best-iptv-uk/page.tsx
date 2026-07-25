@@ -124,7 +124,7 @@ const SECTIONS = [
           UK top-flight football, premium cinema and the major terrestrial
           broadcasters all push a 4K signal. A best-in-class IPTV UK
           subscription mirrors that resolution rather than downscaling
-          everything to 1080p and calling it "HD ready."
+          everything to 1080p and calling it &ldquo;HD ready.&rdquo;
         </p>
         <p>
           <strong className="text-foreground">
@@ -139,7 +139,7 @@ const SECTIONS = [
           <strong className="text-foreground">
             A published money-back guarantee.
           </strong>{" "}
-          A refund window written on the site — not "contact us for details" —
+          A refund window written on the site — not &ldquo;contact us for details&rdquo; —
           is one of the strongest signals of a legitimate service. IPTV UK 4K
           runs a 30-day money-back window with same-day processing, spelled
           out on the refund page in plain English.

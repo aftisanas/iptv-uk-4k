@@ -27,11 +27,21 @@ export const CHECKOUT_COPY = {
 
 export const NAV_LINKS = [
   { label: "Home", href: "/" },
-  { label: "Why Us", href: "/#features" },
+  { label: "Buy IPTV UK", href: "/buy-iptv-uk" },
+  { label: "Best IPTV UK", href: "/best-iptv-uk" },
+  { label: "Subscription", href: "/iptv-subscription-uk" },
   { label: "Pricing", href: "/#pricing" },
-  { label: "FAQ", href: "/#faq" },
   { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/contact" },
+] as const;
+
+export const PILLAR_LINKS = [
+  { label: "Buy IPTV UK", href: "/buy-iptv-uk" },
+  { label: "IPTV Subscription UK", href: "/iptv-subscription-uk" },
+  { label: "Best IPTV UK 2026", href: "/best-iptv-uk" },
+  { label: "IPTV Subscription Hub", href: "/iptv-subscription" },
+  { label: "IPTV Subscription UK Guide", href: "/iptv-subscription/iptv-subscription-uk" },
+  { label: "IPTV UK Subscription", href: "/iptv-subscription/iptv-uk-subscription" },
 ] as const;
 
 export const LEGAL_LINKS = [

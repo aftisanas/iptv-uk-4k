@@ -1,14 +1,14 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Mail, MapPin } from "lucide-react";
-import { NAV_LINKS, LEGAL_LINKS, SITE_NAME, CONTACT_EMAIL } from "@/lib/constants";
+import { NAV_LINKS, LEGAL_LINKS, PILLAR_LINKS, SITE_NAME, CONTACT_EMAIL } from "@/lib/constants";
 import SectionLink from "@/components/SectionLink";
 
 export default function Footer() {
   return (
     <footer className="relative border-t border-violet-100/50 bg-gradient-to-b from-[#fafbff] to-white">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10 py-16 lg:max-w-5xl lg:mx-auto">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 py-16">
           <div className="lg:col-span-1">
             <Link href="/" className="flex items-center gap-2.5 mb-4">
               <div className="relative h-12 w-12 shrink-0">
@@ -40,7 +40,7 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="lg:justify-self-center">
+          <div>
             <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider mb-4">
               Quick Links
             </h3>
@@ -58,7 +58,25 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div className="lg:justify-self-start">
+          <div>
+            <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider mb-4">
+              Guides
+            </h3>
+            <ul className="space-y-3">
+              {PILLAR_LINKS.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-sm text-muted transition-colors hover:text-violet-600"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
             <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider mb-4">
               Legal
             </h3>

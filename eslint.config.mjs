@@ -12,6 +12,9 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Non-build directories (reference/scratch)
+    "sister-repo/**",
+    "cloning-pages/**",
   ]),
 ]);
 

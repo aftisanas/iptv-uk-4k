@@ -28,11 +28,13 @@ export default function OrderSummaryModal({
   const closeButtonRef = useRef<HTMLButtonElement>(null);
   const [proxyOn, setProxyOn] = useState(false);
   const [extraConnections, setExtraConnections] = useState(0);
+  const [prevPlanName, setPrevPlanName] = useState(planName);
 
-  useEffect(() => {
+  if (planName !== prevPlanName) {
+    setPrevPlanName(planName);
     setProxyOn(false);
     setExtraConnections(0);
-  }, [planName]);
+  }
 
   useEffect(() => {
     if (!open) return;
