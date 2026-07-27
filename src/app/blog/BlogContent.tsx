@@ -74,16 +74,12 @@ export default function BlogContent() {
           </motion.div>
 
           {/* Headline */}
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.1 }}
-            className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] mb-6"
-          >
+          {/* LCP: plain server-rendered H1 — no motion wrapper, no opacity animation */}
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] mb-6">
             <span className="text-white">IPTV UK Guides &</span>
             <br />
             <span className="gradient-text-hero">Streaming Tips</span>
-          </motion.h1>
+          </h1>
 
           {/* Subtitle */}
           <motion.p

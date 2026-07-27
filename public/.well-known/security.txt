@@ -1,0 +1,6 @@
+# Security contact for iptv-uk-4k.com — RFC 9116
+Contact: mailto:contact@buy-iptv-uk.com
+Expires: 2027-07-27T00:00:00.000Z
+Preferred-Languages: en
+Canonical: https://iptv-uk-4k.com/.well-known/security.txt
+Policy: https://iptv-uk-4k.com/terms

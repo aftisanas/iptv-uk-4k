@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Mail, MapPin } from "lucide-react";
-import { NAV_LINKS, LEGAL_LINKS, PILLAR_LINKS, SITE_NAME, CONTACT_EMAIL } from "@/lib/constants";
+import { FOOTER_LINKS, LEGAL_LINKS, PILLAR_LINKS, SITE_NAME, CONTACT_EMAIL } from "@/lib/constants";
 import SectionLink from "@/components/SectionLink";
 
 export default function Footer() {
@@ -45,7 +45,7 @@ export default function Footer() {
               Quick Links
             </h3>
             <ul className="space-y-3">
-              {NAV_LINKS.map((link) => (
+              {FOOTER_LINKS.map((link) => (
                 <li key={link.href}>
                   <SectionLink
                     href={link.href}

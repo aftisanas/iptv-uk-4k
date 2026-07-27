@@ -28,7 +28,19 @@
       "Bash(curl -sS -o /dev/null -w \"robots: %{http_code}\\\\n\" https://iptv-uk-4k.com/robots.txt)",
       "Bash(curl *)",
       "Bash(npm run *)",
-      "Bash(npm start *)"
+      "Bash(npm start *)",
+      "Bash(grep -oE '<title>[^<]+</title>|<meta name=\"description\" content=\"[^\"]{0,300}\"|<link rel=\"canonical\" href=\"[^\"]+\"|<h1[^>]*>[^<]*</h1>')",
+      "Bash(grep -oE 'application/ld\\\\+json[^<]{0,400}')",
+      "Bash(sort -u echo \"---BLOG POSTS IN CODE---\" grep -oE 'slug:\\\\s*\"[^\"]+\"|BLOG_POSTS' src/lib/constants.ts)",
+      "PowerShell(npx tsc --noEmit)",
+      "PowerShell(npm run build 2>&1)",
+      "PowerShell(Start-Process -FilePath \"npx\" -ArgumentList \"next\",\"start\",\"-p\",\"3111\" -NoNewWindow -PassThru | Out-Null; Start-Sleep -Seconds 6; try { $r = Invoke-WebRequest -Uri \"http://localhost:3111/.well-known/security.txt\" -UseBasicParsing; Write-Output \"STATUS: $\\($r.StatusCode\\)\"; Write-Output $r.Content } catch { Write-Output \"FAILED: $\\($_.Exception.Message\\)\" })",
+      "Bash(npx next *)",
+      "Bash(curl -s -o /dev/null -w \"security.txt -> %{http_code}\\\\n\" http://localhost:3111/.well-known/security.txt)",
+      "Bash(curl -s http://localhost:3111/.well-known/security.txt)",
+      "Bash(curl -s -o /dev/null -w \"troubleshooting post -> %{http_code}\\\\n\" http://localhost:3111/blog/iptv-uk-troubleshooting)",
+      "Bash(kill %1)",
+      "Bash(grep -o 'Quick Links.\\\\{0,900\\\\}' .next/server/app/index.html)"
     ]
   }
 }

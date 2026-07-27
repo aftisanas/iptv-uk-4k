@@ -149,12 +149,12 @@ const SECTIONS = [
       <>
         <p>
           Four subscription terms run in parallel: 3 months at £25.99, 6 months
-          at £39.99, 12 months at £59.99, and 24 months at £79.99. The 12-month
-          term is the sweet-spot per-month figure most UK households pick; the
-          24-month term drops the effective monthly rate to £4.17 for viewers
-          committing longer. Every plan includes one simultaneous connection
-          by default, with up to five extra connections available at £7.25 each
-          for larger households.
+          at £35.99, 12 months at £49.99, and 24 months at £79.99. The 12-month
+          term is the sweet-spot per-month figure most UK households pick at
+          £4.17; the 24-month term drops the effective monthly rate to £3.33
+          for viewers committing longer. Every plan includes one simultaneous
+          connection by default, with up to five extra connections available —
+          priced per term, from £7.25 each on the 3-month plan.
         </p>
         <p>
           Every figure is in pounds, all-in, printed on the page before
@@ -258,7 +258,7 @@ const FAQS = [
   },
   {
     q: "How many screens can I watch at the same time?",
-    a: "One simultaneous connection is included by default. Up to five extra connections can be added at £7.25 each so different people in the household can stream different channels without kicking each other off.",
+    a: "One simultaneous connection is included by default. Up to five extra connections can be added, priced per plan term — from £7.25 each on the 3-month plan, covering the full term rather than being billed monthly — so different people in the household can stream different channels without kicking each other off.",
   },
   {
     q: "Do I need a VPN with my IPTV UK subscription?",

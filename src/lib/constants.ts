@@ -1,6 +1,6 @@
 export const SITE_NAME = "IPTV UK 4K";
 export const SITE_URL = "https://iptv-uk-4k.com";
-export const CONTACT_EMAIL = "support@iptv-uk-4k.com";
+export const CONTACT_EMAIL = "contact@buy-iptv-uk.com";
 export const SITE_LOGO_PATH = "/iptv-uk.webp";
 export const SITE_LOGO_URL = `${SITE_URL}${SITE_LOGO_PATH}`;
 
@@ -11,26 +11,37 @@ export const AUTHOR_BYLINE = {
 
 export const WHATSAPP_NUMBER = "447878757831";
 
-export const EXTRA_CONNECTION_PRICE = 7.25;
+// Extra-connection pricing is per plan (see `extraConnectionPrice` on each
+// PRICING_PLANS entry) — it scales with the plan term rather than being a flat fee.
 export const EXTRA_CONNECTIONS_MAX = 5;
 
 export const CHECKOUT_COPY = {
   extraConnectionsLabel: "Extra Connections",
   extraConnectionsHelp:
     "Add simultaneous streams for other people in your household. Each connection lets one more device watch at the same time.",
-  extraConnectionsPriceLabel: `+£${EXTRA_CONNECTION_PRICE.toFixed(2)} per extra connection`,
+  extraConnectionsPriceLabel: (price: number) =>
+    `+£${price.toFixed(2)} per extra connection`,
   buttonLabelPrefix: "Order via WhatsApp",
   buttonSubtitle:
     "Opens WhatsApp with your order details — no card entered here.",
   footerNote: "Payment handled securely once your order is confirmed.",
 } as const;
 
+// Top navigation is deliberately short — four destinations, all on the homepage.
 export const NAV_LINKS = [
   { label: "Home", href: "/" },
-  { label: "Buy IPTV UK", href: "/buy-iptv-uk" },
-  { label: "Best IPTV UK", href: "/best-iptv-uk" },
-  { label: "Subscription", href: "/iptv-subscription-uk" },
+  { label: "Why us", href: "/#features" },
   { label: "Pricing", href: "/#pricing" },
+  { label: "FAQ", href: "/#faq" },
+] as const;
+
+// Footer "Quick Links" stays broader than the navbar: it is the only footer-level
+// link into /blog and /contact, so those must not be dropped alongside the nav trim.
+export const FOOTER_LINKS = [
+  { label: "Home", href: "/" },
+  { label: "Pricing", href: "/#pricing" },
+  { label: "FAQ", href: "/#faq" },
+  { label: "Tutorials", href: "/tutorials" },
   { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/contact" },
 ] as const;
@@ -121,6 +132,7 @@ export const PRICING_PLANS = [
     period: "3 months",
     devices: 1,
     proxyPrice: 4.75,
+    extraConnectionPrice: 7.25,
     badge: "Starter",
     discount: "-57%",
     accentColor: "violet",
@@ -149,6 +161,7 @@ export const PRICING_PLANS = [
     period: "6 months",
     devices: 1,
     proxyPrice: 9.50,
+    extraConnectionPrice: 14.50,
     badge: "Half-Year Value",
     discount: "-70%",
     accentColor: "violet",
@@ -177,6 +190,7 @@ export const PRICING_PLANS = [
     period: "year",
     devices: 1,
     proxyPrice: 19.00,
+    extraConnectionPrice: 29.00,
     badge: "Most Popular — Save 68%",
     discount: "-68%",
     accentColor: "blue",
@@ -205,6 +219,7 @@ export const PRICING_PLANS = [
     period: "2 years",
     devices: 1,
     proxyPrice: 38.00,
+    extraConnectionPrice: 58.00,
     badge: "Ultimate — Save 74%",
     discount: "-74%",
     accentColor: "violet",
@@ -364,5 +379,14 @@ export const BLOG_POSTS = [
     date: "2026-03-20",
     readTime: "6 min read",
     category: "Tutorial",
+  },
+  {
+    slug: "iptv-uk-troubleshooting",
+    title: "IPTV UK Troubleshooting — The Common Failures And How To Fix Them",
+    excerpt:
+      "IPTV UK troubleshooting guide — the common failures (buffering, freezing, no signal, audio lag) and how to fix each one. Diagnostic steps for UK viewers, organised by symptom.",
+    date: "2026-07-27",
+    readTime: "10 min read",
+    category: "Guide",
   },
 ] as const;

@@ -1,46 +1,75 @@
 import type { MetadataRoute } from "next";
 import { BLOG_POSTS, SITE_URL } from "@/lib/constants";
 
+/**
+ * Per-route last-meaningful-update dates.
+ *
+ * Deliberately hand-maintained rather than `new Date()` at build time: a
+ * build-time timestamp re-stamps every URL on every deploy, so `lastmod`
+ * carries no signal and crawlers learn to ignore it. Bump the entry for a
+ * route only when that route's content actually changes.
+ */
+const ROUTE_LAST_MODIFIED: Record<string, string> = {
+  "/": "2026-07-25",
+  "/buy-iptv-uk": "2026-07-25",
+  "/iptv-subscription-uk": "2026-07-25",
+  "/best-iptv-uk": "2026-07-25",
+  "/iptv-subscription": "2026-07-25",
+  "/iptv-subscription/iptv-subscription-uk": "2026-07-25",
+  "/iptv-subscription/iptv-uk-subscription": "2026-07-25",
+  "/blog": "2026-07-27",
+  "/tutorials": "2026-07-27",
+  "/contact": "2026-07-27",
+  "/refund": "2026-04-20",
+  "/privacy": "2026-04-20",
+  "/terms": "2026-04-20",
+  "/dmca": "2026-04-20",
+};
+
 export default function sitemap(): MetadataRoute.Sitemap {
-  const now = new Date();
-  const parseDateOrNow = (value: string) => {
+  const fallback = new Date("2026-04-20");
+
+  const parseDate = (value: string | undefined) => {
+    if (!value) return fallback;
     const parsed = new Date(value);
-    return Number.isNaN(parsed.getTime()) ? now : parsed;
+    return Number.isNaN(parsed.getTime()) ? fallback : parsed;
   };
+
+  const lastModified = (path: string) => parseDate(ROUTE_LAST_MODIFIED[path]);
 
   const staticRoutes: MetadataRoute.Sitemap = [
     // Homepage
-    { url: SITE_URL, lastModified: now, changeFrequency: "weekly", priority: 1 },
+    { url: SITE_URL, lastModified: lastModified("/"), changeFrequency: "weekly", priority: 1 },
 
     // Commercial landings (highest transactional intent after homepage)
-    { url: `${SITE_URL}/buy-iptv-uk`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
-    { url: `${SITE_URL}/iptv-subscription-uk`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
+    { url: `${SITE_URL}/buy-iptv-uk`, lastModified: lastModified("/buy-iptv-uk"), changeFrequency: "weekly", priority: 0.9 },
+    { url: `${SITE_URL}/iptv-subscription-uk`, lastModified: lastModified("/iptv-subscription-uk"), changeFrequency: "weekly", priority: 0.9 },
 
     // Pillar article
-    { url: `${SITE_URL}/best-iptv-uk`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${SITE_URL}/best-iptv-uk`, lastModified: lastModified("/best-iptv-uk"), changeFrequency: "monthly", priority: 0.8 },
 
     // Subscription hub + child articles
-    { url: `${SITE_URL}/iptv-subscription`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
-    { url: `${SITE_URL}/iptv-subscription/iptv-subscription-uk`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
-    { url: `${SITE_URL}/iptv-subscription/iptv-uk-subscription`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${SITE_URL}/iptv-subscription`, lastModified: lastModified("/iptv-subscription"), changeFrequency: "monthly", priority: 0.7 },
+    { url: `${SITE_URL}/iptv-subscription/iptv-subscription-uk`, lastModified: lastModified("/iptv-subscription/iptv-subscription-uk"), changeFrequency: "monthly", priority: 0.7 },
+    { url: `${SITE_URL}/iptv-subscription/iptv-uk-subscription`, lastModified: lastModified("/iptv-subscription/iptv-uk-subscription"), changeFrequency: "monthly", priority: 0.7 },
 
     // Editorial indexes
-    { url: `${SITE_URL}/blog`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
-    { url: `${SITE_URL}/tutorials`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
+    { url: `${SITE_URL}/blog`, lastModified: lastModified("/blog"), changeFrequency: "weekly", priority: 0.8 },
+    { url: `${SITE_URL}/tutorials`, lastModified: lastModified("/tutorials"), changeFrequency: "monthly", priority: 0.6 },
 
     // Support / legal
-    { url: `${SITE_URL}/contact`, lastModified: now, changeFrequency: "monthly", priority: 0.5 },
-    { url: `${SITE_URL}/refund`, lastModified: now, changeFrequency: "yearly", priority: 0.3 },
-    { url: `${SITE_URL}/privacy`, lastModified: now, changeFrequency: "yearly", priority: 0.3 },
-    { url: `${SITE_URL}/terms`, lastModified: now, changeFrequency: "yearly", priority: 0.3 },
-    { url: `${SITE_URL}/dmca`, lastModified: now, changeFrequency: "yearly", priority: 0.3 },
+    { url: `${SITE_URL}/contact`, lastModified: lastModified("/contact"), changeFrequency: "monthly", priority: 0.5 },
+    { url: `${SITE_URL}/refund`, lastModified: lastModified("/refund"), changeFrequency: "yearly", priority: 0.3 },
+    { url: `${SITE_URL}/privacy`, lastModified: lastModified("/privacy"), changeFrequency: "yearly", priority: 0.3 },
+    { url: `${SITE_URL}/terms`, lastModified: lastModified("/terms"), changeFrequency: "yearly", priority: 0.3 },
+    { url: `${SITE_URL}/dmca`, lastModified: lastModified("/dmca"), changeFrequency: "yearly", priority: 0.3 },
   ];
 
   const blogRoutes: MetadataRoute.Sitemap = BLOG_POSTS.filter((post) =>
     Boolean(post.slug)
   ).map((post) => ({
     url: `${SITE_URL}/blog/${post.slug}`,
-    lastModified: parseDateOrNow(post.date),
+    lastModified: parseDate(post.date),
     changeFrequency: "monthly",
     priority: 0.7,
   }));

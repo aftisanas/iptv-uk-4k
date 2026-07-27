@@ -1,4 +1,4 @@
-import { WHATSAPP_NUMBER, EXTRA_CONNECTION_PRICE } from "@/lib/constants";
+import { WHATSAPP_NUMBER } from "@/lib/constants";
 
 export interface WhatsAppOrderDetails {
   planName: string;
@@ -6,6 +6,8 @@ export interface WhatsAppOrderDetails {
   proxyEnabled: boolean;
   proxyPrice: number;
   extraConnections: number;
+  /** Per-connection price for the selected plan — scales with the plan term. */
+  extraConnectionPrice: number;
   brandName?: string;
 }
 
@@ -15,18 +17,20 @@ export function calculateOrderTotal(
   return (
     order.planPrice +
     (order.proxyEnabled ? order.proxyPrice : 0) +
-    order.extraConnections * EXTRA_CONNECTION_PRICE
+    order.extraConnections * order.extraConnectionPrice
   );
 }
 
 export function buildWhatsAppCheckoutUrl(order: WhatsAppOrderDetails): string {
   const brand = order.brandName ?? "the service";
-  const extraConnectionsPrice = order.extraConnections * EXTRA_CONNECTION_PRICE;
+  const extraConnectionsPrice =
+    order.extraConnections * order.extraConnectionPrice;
   const total = calculateOrderTotal({
     planPrice: order.planPrice,
     proxyEnabled: order.proxyEnabled,
     proxyPrice: order.proxyPrice,
     extraConnections: order.extraConnections,
+    extraConnectionPrice: order.extraConnectionPrice,
   });
 
   const lines = [

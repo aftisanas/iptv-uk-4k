@@ -209,16 +209,12 @@ export default function TutorialsContent() {
             <span className="font-medium">IPTV UK 4K Setup Guides — Every Device</span>
           </motion.div>
 
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.1 }}
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-bold tracking-tight leading-[1.1] mb-6"
-          >
+          {/* LCP: plain server-rendered H1 — no motion wrapper, no opacity animation */}
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-bold tracking-tight leading-[1.1] mb-6">
             <span className="text-white">Your IPTV UK 4K Setup Guide —</span>
             <br />
             <span className="gradient-text-hero">Up And Running In Minutes</span>
-          </motion.h1>
+          </h1>
 
           <motion.p
             initial={{ opacity: 0, y: 30 }}

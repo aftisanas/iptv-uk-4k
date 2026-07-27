@@ -17,6 +17,64 @@ interface BlogPostContentProps {
   content: string[];
 }
 
+/**
+ * Renders the inline subset of markdown the post bodies use: `**bold**` and
+ * `[label](/href)`. Anything else is passed through as plain text.
+ */
+function renderInline(text: string, keyPrefix: string) {
+  const pattern = /\[([^\]]+)\]\(([^)]+)\)|\*\*([^*]+)\*\*/g;
+  const nodes: React.ReactNode[] = [];
+  let lastIndex = 0;
+  let match: RegExpExecArray | null;
+
+  while ((match = pattern.exec(text)) !== null) {
+    if (match.index > lastIndex) {
+      nodes.push(text.slice(lastIndex, match.index));
+    }
+
+    const [full, linkLabel, linkHref, boldText] = match;
+    if (linkLabel && linkHref) {
+      const linkClass =
+        "text-primary underline underline-offset-2 hover:no-underline";
+      nodes.push(
+        linkHref.startsWith("/") ? (
+          <Link
+            key={`${keyPrefix}-${match.index}`}
+            href={linkHref}
+            className={linkClass}
+          >
+            {linkLabel}
+          </Link>
+        ) : (
+          <a
+            key={`${keyPrefix}-${match.index}`}
+            href={linkHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={linkClass}
+          >
+            {linkLabel}
+          </a>
+        )
+      );
+    } else {
+      nodes.push(
+        <strong key={`${keyPrefix}-${match.index}`} className="text-foreground">
+          {boldText}
+        </strong>
+      );
+    }
+
+    lastIndex = match.index + full.length;
+  }
+
+  if (lastIndex < text.length) {
+    nodes.push(text.slice(lastIndex));
+  }
+
+  return nodes.length > 0 ? nodes : text;
+}
+
 export default function BlogPostContent({ post, content }: BlogPostContentProps) {
   return (
     <div className="pt-20">
@@ -91,6 +149,16 @@ export default function BlogPostContent({ post, content }: BlogPostContentProps)
                         </h2>
                       );
                     }
+                    if (line.startsWith("### ")) {
+                      return (
+                        <h3
+                          key={j}
+                          className="text-lg sm:text-xl font-semibold text-foreground mt-8 mb-3"
+                        >
+                          {line.replace("### ", "")}
+                        </h3>
+                      );
+                    }
                     if (line.startsWith("- **")) {
                       const match = line.match(/- \*\*(.+?)\*\*(.+)/);
                       if (match) {
@@ -100,7 +168,7 @@ export default function BlogPostContent({ post, content }: BlogPostContentProps)
                             className="text-sm text-gray-600 leading-relaxed ml-4 mb-2 list-disc"
                           >
                             <strong className="text-foreground">{match[1]}</strong>
-                            {match[2]}
+                            {renderInline(match[2], `${i}-${j}`)}
                           </li>
                         );
                       }
@@ -111,7 +179,7 @@ export default function BlogPostContent({ post, content }: BlogPostContentProps)
                           key={j}
                           className="text-sm text-gray-600 leading-relaxed ml-4 mb-2 list-disc"
                         >
-                          {line.replace("- ", "")}
+                          {renderInline(line.replace("- ", ""), `${i}-${j}`)}
                         </li>
                       );
                     }
@@ -121,7 +189,7 @@ export default function BlogPostContent({ post, content }: BlogPostContentProps)
                         key={j}
                         className="text-base text-gray-600 leading-relaxed mb-4"
                       >
-                        {line}
+                        {renderInline(line, `${i}-${j}`)}
                       </p>
                     );
                   })}
