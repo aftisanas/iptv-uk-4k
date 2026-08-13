@@ -1,3 +1,5 @@
+export const CHECKOUT_MODE = (process.env.NEXT_PUBLIC_CHECKOUT_MODE ?? "whatsapp") as "whatsapp" | "hub";
+
 export const SITE_NAME = "IPTV UK 4K";
 export const SITE_URL = "https://iptv-uk-4k.com";
 export const SITE_SLUG = "iptv-uk-4k";
