@@ -73,6 +73,22 @@ const HUB_LINKS = [
       "A deeper look at what a single IPTV UK subscription unlocks: the full 37,000-channel catalogue, 198,000 on-demand titles, supported devices and the same-day activation flow.",
     icon: BookOpen,
   },
+  {
+    href: "/iptv-subscription/4k-iptv-uk",
+    eyebrow: "Article",
+    title: "4K IPTV UK — What Native UHD Actually Requires",
+    description:
+      "How to tell native 4K from upscaled 1080p wearing a 4K label, the bandwidth a real UHD stream needs, which devices decode it properly and why sport is where the difference shows.",
+    icon: BookOpen,
+  },
+  {
+    href: "/iptv-subscription/uk-iptv-subscription",
+    eyebrow: "Article",
+    title: "UK IPTV Subscription — Plans, Quality & Activation",
+    description:
+      "What sets a UK-focused subscription apart: British channel coverage and regional variants, stream quality at peak, how the four terms compare and what activation involves.",
+    icon: BookOpen,
+  },
 ] as const;
 
 export default function IptvSubscriptionHubPage() {
@@ -114,7 +130,7 @@ export default function IptvSubscriptionHubPage() {
 
           <p className="text-base lg:text-lg text-muted leading-relaxed mb-10 max-w-2xl">
             One place to reach every IPTV UK 4K subscription resource — the
-            transactional landing page for buying a plan and the two long-form
+            transactional landing page for buying a plan and the long-form
             articles that unpack the offering in detail.
           </p>
 

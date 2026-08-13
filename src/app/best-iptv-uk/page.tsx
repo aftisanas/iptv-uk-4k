@@ -115,6 +115,11 @@ const SECTIONS = [
           <Link href="/iptv-subscription-uk" className={linkCls}>
             subscription comparison
           </Link>
+          . To score a shortlist against these criteria one by one, work through
+          the{" "}
+          <Link href="/best-iptv-uk/best-iptv-provider-uk" className={linkCls}>
+            best IPTV provider UK comparison
+          </Link>
           .
         </p>
         <p>

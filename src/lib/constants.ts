@@ -48,13 +48,22 @@ export const FOOTER_LINKS = [
   { label: "Contact", href: "/contact" },
 ] as const;
 
+// Site-wide silo column. Every landing page must appear here — the footer is the
+// only link source that reaches all of them from every page, so dropping an entry
+// orphans that page from the internal link graph.
 export const PILLAR_LINKS = [
   { label: "Buy IPTV UK", href: "/buy-iptv-uk" },
   { label: "IPTV Subscription UK", href: "/iptv-subscription-uk" },
   { label: "Best IPTV UK 2026", href: "/best-iptv-uk" },
+  { label: "Best IPTV Provider UK", href: "/best-iptv-uk/best-iptv-provider-uk" },
+  { label: "IPTV Provider UK", href: "/iptv-provider-uk" },
+  { label: "UK Sports IPTV", href: "/uk-sports-iptv" },
+  { label: "4K IPTV UK", href: "/iptv-subscription/4k-iptv-uk" },
+  { label: "IPTV Free Trial UK", href: "/iptv-free-trial-uk" },
   { label: "IPTV Subscription Hub", href: "/iptv-subscription" },
   { label: "IPTV Subscription UK Guide", href: "/iptv-subscription/iptv-subscription-uk" },
   { label: "IPTV UK Subscription", href: "/iptv-subscription/iptv-uk-subscription" },
+  { label: "UK IPTV Subscription", href: "/iptv-subscription/uk-iptv-subscription" },
 ] as const;
 
 export const LEGAL_LINKS = [
