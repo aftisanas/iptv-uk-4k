@@ -1,5 +1,7 @@
 export const SITE_NAME = "IPTV UK 4K";
 export const SITE_URL = "https://iptv-uk-4k.com";
+export const SITE_SLUG = "iptv-uk-4k";
+export const CHECKOUT_HUB_URL = "https://checkout.british-iptv-4k.com";
 export const CONTACT_EMAIL = "contact@buy-iptv-uk.com";
 export const SITE_LOGO_PATH = "/iptv-uk.webp";
 export const SITE_LOGO_URL = `${SITE_URL}${SITE_LOGO_PATH}`;
@@ -10,9 +12,9 @@ export const AUTHOR_BYLINE = {
 } as const;
 
 export const WHATSAPP_NUMBER = "447878757831";
+export const WHATSAPP_DISPLAY = "+44 7878 757831";
 
-// Extra-connection pricing is per plan (see `extraConnectionPrice` on each
-// PRICING_PLANS entry) — it scales with the plan term rather than being a flat fee.
+export const EXTRA_CONNECTION_PRICE = 7.25;
 export const EXTRA_CONNECTIONS_MAX = 5;
 
 export const CHECKOUT_COPY = {

@@ -1,4 +1,4 @@
-import { WHATSAPP_NUMBER } from "@/lib/constants";
+import { WHATSAPP_NUMBER, EXTRA_CONNECTION_PRICE } from "./constants";
 
 export interface WhatsAppOrderDetails {
   planName: string;
@@ -6,8 +6,6 @@ export interface WhatsAppOrderDetails {
   proxyEnabled: boolean;
   proxyPrice: number;
   extraConnections: number;
-  /** Per-connection price for the selected plan — scales with the plan term. */
-  extraConnectionPrice: number;
   brandName?: string;
 }
 
@@ -17,30 +15,28 @@ export function calculateOrderTotal(
   return (
     order.planPrice +
     (order.proxyEnabled ? order.proxyPrice : 0) +
-    order.extraConnections * order.extraConnectionPrice
+    order.extraConnections * EXTRA_CONNECTION_PRICE
   );
 }
 
 export function buildWhatsAppCheckoutUrl(order: WhatsAppOrderDetails): string {
   const brand = order.brandName ?? "the service";
-  const extraConnectionsPrice =
-    order.extraConnections * order.extraConnectionPrice;
+  const extraConnectionsPrice = order.extraConnections * EXTRA_CONNECTION_PRICE;
   const total = calculateOrderTotal({
     planPrice: order.planPrice,
     proxyEnabled: order.proxyEnabled,
     proxyPrice: order.proxyPrice,
     extraConnections: order.extraConnections,
-    extraConnectionPrice: order.extraConnectionPrice,
   });
 
   const lines = [
-    `Hi — I'd like to order ${brand}.`,
+    `Hi 👋 I'd like to order ${brand}.`,
     "",
     `Plan: ${order.planName} (£${order.planPrice.toFixed(2)})`,
   ];
 
   if (order.proxyEnabled) {
-    lines.push(`Secure Proxy: Yes (+£${order.proxyPrice.toFixed(2)})`);
+    lines.push(`Proxy Protection: Yes (+£${order.proxyPrice.toFixed(2)})`);
   }
 
   if (order.extraConnections > 0) {
