@@ -9,7 +9,6 @@ import { Loader2, MessageCircle, Minus, Plus, Shield, ShoppingCart, X } from "lu
 import {
   CHECKOUT_COPY,
   CHECKOUT_MODE,
-  EXTRA_CONNECTION_PRICE,
   EXTRA_CONNECTIONS_MAX,
   SITE_NAME,
   SITE_SLUG,
@@ -24,6 +23,7 @@ type OrderSummaryModalProps = {
   planName: string;
   planPrice: number;
   proxyPrice: number;
+  extraConnectionPrice: number;
   currency?: string;
 };
 
@@ -84,6 +84,7 @@ export default function OrderSummaryModal({
   planName,
   planPrice,
   proxyPrice,
+  extraConnectionPrice,
   currency = "£",
 }: OrderSummaryModalProps) {
   const closeButtonRef = useRef<HTMLButtonElement>(null);
@@ -136,9 +137,10 @@ export default function OrderSummaryModal({
     proxyEnabled: proxyOn,
     proxyPrice,
     extraConnections,
+    extraConnectionPrice,
   });
 
-  const extraConnectionsSubtotal = extraConnections * EXTRA_CONNECTION_PRICE;
+  const extraConnectionsSubtotal = extraConnections * extraConnectionPrice;
 
   if (CHECKOUT_MODE === "whatsapp") {
     const handleWhatsappCheckout = () => {
@@ -148,6 +150,7 @@ export default function OrderSummaryModal({
         proxyEnabled: proxyOn,
         proxyPrice,
         extraConnections,
+        extraConnectionPrice,
         brandName: SITE_NAME,
       });
       window.open(url, "_blank", "noopener,noreferrer");
@@ -299,12 +302,12 @@ export default function OrderSummaryModal({
                 </div>
 
                 <div className="mt-2 text-xs font-semibold text-accent">
-                  {CHECKOUT_COPY.extraConnectionsPriceLabel(EXTRA_CONNECTION_PRICE)}
+                  {CHECKOUT_COPY.extraConnectionsPriceLabel(extraConnectionPrice)}
                 </div>
 
                 {extraConnections > 0 && (
                   <div className="mt-1 text-xs text-muted">
-                    {extraConnections} × {formatPrice(EXTRA_CONNECTION_PRICE, currency)} ={" "}
+                    {extraConnections} × {formatPrice(extraConnectionPrice, currency)} ={" "}
                     <span className="font-semibold text-foreground">
                       {formatPrice(extraConnectionsSubtotal, currency)}
                     </span>
@@ -351,7 +354,7 @@ export default function OrderSummaryModal({
   const durationMonths = parseDurationMonths(planName);
   const proxyPerMonth = durationMonths ? proxyPrice / durationMonths : null;
   const extraPerMonthPerConn = durationMonths
-    ? EXTRA_CONNECTION_PRICE / durationMonths
+    ? extraConnectionPrice / durationMonths
     : null;
   const extraPerMonthTotal =
     durationMonths && extraConnections > 0
@@ -577,19 +580,19 @@ export default function OrderSummaryModal({
                       +£{extraPerMonthPerConn.toFixed(2)}/month per connection
                     </div>
                     <div className="mt-1 text-xs text-muted">
-                      £{EXTRA_CONNECTION_PRICE.toFixed(2)} one-time each · billed for {durationMonths} months
+                      £{extraConnectionPrice.toFixed(2)} one-time each · billed for {durationMonths} months
                     </div>
                   </>
                 ) : (
                   <div className="text-sm font-semibold text-accent">
-                    +£{EXTRA_CONNECTION_PRICE.toFixed(2)} per connection
+                    +£{extraConnectionPrice.toFixed(2)} per connection
                   </div>
                 )}
               </div>
 
               {extraConnections > 0 && (
                 <div className="mt-2 text-xs text-muted">
-                  {extraConnections} × £{EXTRA_CONNECTION_PRICE.toFixed(2)} ={" "}
+                  {extraConnections} × £{extraConnectionPrice.toFixed(2)} ={" "}
                   <span className="font-semibold text-foreground">
                     {formatPrice(extraConnectionsSubtotal, currency)}
                   </span>

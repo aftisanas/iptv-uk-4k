@@ -16,7 +16,6 @@ export const AUTHOR_BYLINE = {
 export const WHATSAPP_NUMBER = "447878757831";
 export const WHATSAPP_DISPLAY = "+44 7878 757831";
 
-export const EXTRA_CONNECTION_PRICE = 7.25;
 export const EXTRA_CONNECTIONS_MAX = 5;
 
 export const CHECKOUT_COPY = {
