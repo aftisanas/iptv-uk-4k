@@ -37,6 +37,11 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
+        source: "/buy-iptv-uk",
+        destination: "/iptv-uk",
+        permanent: true,
+      },
+      {
         source: "/blog/iptv-vs-sky-comparison",
         destination: "/blog",
         permanent: true,

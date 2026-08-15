@@ -27,11 +27,11 @@ import {
   SITE_URL,
 } from "@/lib/constants";
 
-const PAGE_PATH = "/buy-iptv-uk";
+const PAGE_PATH = "/iptv-uk";
 const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
 const PAGE_TITLE = "Buy IPTV UK — 37,000 Channels In 4K From £4.17/mo";
 const PAGE_DESCRIPTION =
-  "Buy an IPTV UK subscription with 37,000 live channels, 198,000 films & series, native 4K UHD and a 30-day money-back guarantee. Instant activation from £4.17/mo.";
+  "Buy IPTV UK from £4.17/mo. Get 37,000 live channels, 198,000 films & series in 4K UHD, instant activation and a 30-day money-back guarantee.";
 
 export const metadata: Metadata = {
   title: { absolute: PAGE_TITLE },
@@ -81,7 +81,7 @@ const PURCHASE_ASSURANCES = [
   {
     icon: ShieldCheck,
     title: "30-day money-back",
-    body: "Every plan is protected by a same-day refund policy. If it does not fit your household, we return every penny.",
+    body: "Every plan you buy is protected by a same-day refund policy. If it does not fit your household, we return every penny.",
   },
   {
     icon: Wallet,
@@ -90,48 +90,60 @@ const PURCHASE_ASSURANCES = [
   },
 ];
 
-const BUY_FAQ_ITEMS = [
+const BUY_IPTV_UK_FAQ_ITEMS = [
   {
-    question: "How do I actually buy an IPTV UK subscription from IPTV UK 4K?",
+    question: "How do I buy IPTV UK from IPTV UK 4K?",
     answer:
-      "Choose your plan on the pricing table below, add any extra simultaneous connections or the Secure Proxy option, then confirm your purchase on WhatsApp. Your login credentials and a step-by-step setup email land within minutes.",
+      "Choose a plan on the pricing table below, add any extra simultaneous connections or the Secure Proxy option, then confirm your order on WhatsApp. Your subscription login and a step-by-step setup email arrive within minutes.",
+  },
+  {
+    question: "What IPTV UK subscription plans can I buy?",
+    answer:
+      "Four terms are available: 3 months (£25.99), 6 months (£35.99), 12 months (£49.99 — from £4.17/mo) and 24 months (£79.99). Every plan unlocks the full library — 37,000 live channels, 198,000 films and series, native 4K where the source supports it, EPG with 7-day catch-up and 24/7 support.",
   },
   {
     question: "What payment methods can I use to buy IPTV UK?",
     answer:
-      "Checkout is handled on WhatsApp so you never enter card details in a browser form. From there you can settle by bank transfer, card, or the payment option our support agent shares — whichever suits you.",
+      "Checkout is handled on WhatsApp so you never enter card details in a browser form. From there you can settle by bank transfer, card or the payment option our support agent shares — whichever suits you.",
   },
   {
     question: "How fast is activation after I buy?",
     answer:
-      "Activation is typically complete within a few minutes of your order being confirmed. There is no manual review and no office-hours restriction — buy late at night and your subscription is live before you finish making tea.",
+      "Activation is typically complete within a few minutes of your order being confirmed. There is no manual review and no office-hours restriction — buy late at night and your UK IPTV subscription is live before you finish making tea.",
+  },
+  {
+    question: "Which devices does the IPTV subscription work on?",
+    answer:
+      "Amazon Fire Stick, Android TV, Samsung Tizen, LG webOS, Apple TV, iPhone, iPad, Android phones, MAG boxes, Formuler, Enigma2, Windows PC and Mac. Six IPTV player apps are officially supported, with a setup guide emailed after purchase.",
+  },
+  {
+    question: "Can I stream on more than one device at the same time?",
+    answer:
+      "Each subscription streams on one device by default. Add extra simultaneous-connection options at checkout — pick the number you need so the whole household can watch different channels at once.",
+  },
+  {
+    question: "Can I cancel and get a refund?",
+    answer:
+      "Yes. Every IPTV UK subscription you buy is covered by a 30-day money-back guarantee. Email support within 30 days for any reason and we refund the full subscription fee, same-day, with no forms and no retention calls.",
   },
   {
     question: "What happens if I buy and the service does not work for me?",
     answer:
-      "Every plan you buy from IPTV UK 4K carries a 30-day money-back guarantee. Email support within 30 days for any reason and we refund the full subscription fee, same-day, with no retention calls or paperwork.",
+      "Contact support within the 30-day window and we issue a same-day full refund. Most issues are five-minute fixes once you reach a support agent, so the refund route is a last resort — not the first thing you have to fight for.",
   },
   {
-    question: "Do I need to buy any equipment on top of the subscription?",
+    question: "How do I get support after I buy IPTV UK?",
     answer:
-      "No. If you already own a Fire Stick, Smart TV, Apple TV, Android box, laptop, phone or tablet, the subscription runs on it. There is no dish, no engineer visit and no proprietary receiver to buy.",
-  },
-  {
-    question: "Is it safe to buy IPTV subscriptions online in the UK?",
-    answer:
-      "Buying a subscription from a UK-focused provider that runs its own infrastructure and honours a public money-back window is safe. Our WhatsApp checkout means no card details ever sit in an on-site form, and the refund guarantee protects you if the service does not deliver.",
-  },
-  {
-    question: "Can I upgrade my plan later after I buy?",
-    answer:
-      "Yes. Add extra simultaneous connections, extend your term, or switch to a longer plan at any time — just message support and we prorate the difference against your remaining subscription.",
+      "24/7 English-language support is available on WhatsApp and by email at " +
+      CONTACT_EMAIL +
+      ". Setup tutorials for every supported device are linked from the confirmation email, and support agents can walk you through activation if you get stuck.",
   },
 ];
 
 const linkCls =
   "font-semibold text-violet-600 underline-offset-4 hover:underline hover:text-violet-700 transition-colors";
 
-export default function BuyIptvUkPage() {
+export default function IptvUkPage() {
   const webpageId = `${PAGE_URL}#webpage`;
   const serviceId = `${PAGE_URL}#service`;
   const breadcrumbId = `${PAGE_URL}#breadcrumb`;
@@ -146,7 +158,7 @@ export default function BuyIptvUkPage() {
       <HeroSection
         h1TopLine="Buy IPTV UK"
         h1BottomLine="37,000 Channels In 4K — From £4.17/mo"
-        subheading="Buy an IPTV UK subscription with 37,000 live channels, 198,000 films & series, native 4K UHD and a 30-day money-back guarantee. Instant activation, no dish, no lock-in — settle in minutes on WhatsApp."
+        subheading="Buy an IPTV UK subscription with 37,000 live channels, 198,000 films & series and native 4K UHD. Instant activation, no dish, no lock-in, 30-day money-back — settle in minutes on WhatsApp."
         primaryCtaLabel="See Plans & Buy Now"
         primaryCtaHref="#pricing"
         secondaryCtaLabel="Read the Setup Guide"
@@ -155,7 +167,7 @@ export default function BuyIptvUkPage() {
 
       <StatsBar />
 
-      {/* Why buy from IPTV UK 4K — bespoke, buy-intent framed */}
+      {/* Why buy from us — commercial framing */}
       <section
         id="why-buy"
         aria-labelledby="why-buy-heading"
@@ -169,21 +181,21 @@ export default function BuyIptvUkPage() {
             <div className="mx-auto max-w-3xl text-center">
               <span className="inline-flex items-center gap-2 rounded-full bg-violet-50 border border-violet-200 px-5 py-2 text-sm font-semibold text-violet-700 mb-5">
                 <CheckCircle2 className="h-4 w-4" />
-                Why Buy From IPTV UK 4K
+                Why Buy IPTV UK From Us
               </span>
               <h2
                 id="why-buy-heading"
                 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-5"
               >
-                Buy Premium IPTV UK — Built For{" "}
-                <span className="gradient-text">British Households</span>
+                Why Buy IPTV UK{" "}
+                <span className="gradient-text">From Us</span>
               </h2>
               <p className="mx-auto max-w-2xl text-base lg:text-lg text-muted leading-relaxed">
-                People looking to buy IPTV in the UK usually want three things:
+                People buying a UK IPTV subscription usually want three things:
                 a channel line-up that actually covers what they watch, a
-                subscription that stays live on match nights, and a way out if
-                it does not deliver. IPTV UK 4K is engineered around those
-                three commitments — nothing bolted on, nothing held back.
+                service that stays live on match nights, and a way out if it
+                does not deliver. IPTV UK 4K is engineered around those three
+                commitments — nothing bolted on, nothing held back.
               </p>
             </div>
           </MotionReveal>
@@ -209,16 +221,19 @@ export default function BuyIptvUkPage() {
 
           <MotionReveal>
             <p className="mx-auto mt-12 max-w-3xl text-center text-base text-muted leading-relaxed">
-              Not sure whether IPTV UK 4K is right for you? Compare us against
-              the{" "}
-              <Link href="/best-iptv-uk" className={linkCls}>
-                best IPTV UK options
-              </Link>{" "}
-              or read how our{" "}
+              Comparing options before you buy? See how our{" "}
               <Link href="/iptv-subscription-uk" className={linkCls}>
-                subscription plans work
+                IPTV subscription UK plans work
+              </Link>
+              , read the{" "}
+              <Link href="/iptv-provider-uk" className={linkCls}>
+                IPTV provider UK breakdown
               </Link>{" "}
-              before you buy.
+              or check the{" "}
+              <Link href="/iptv-subscription/4k-iptv-uk" className={linkCls}>
+                4K IPTV UK details
+              </Link>{" "}
+              first.
             </p>
           </MotionReveal>
         </div>
@@ -226,13 +241,10 @@ export default function BuyIptvUkPage() {
 
       <FeaturesSection />
 
-      {/* Money block — anchor for the buy CTA */}
+      {/* Pricing — the conversion block */}
       <PricingSection />
 
-      {/* Subscription hand-off — internal link to the nested subscription hub
-          (matches the original ranking page's structural link from
-          /buy-iptv-uk → /iptv-subscription/iptv-uk-subscription). Copy rewritten
-          for this domain; anchor id preserved for backward-compatible deep-links. */}
+      {/* What's included in the subscription you buy */}
       <section id="subscription" className="relative py-11 lg:py-16">
         <div className="absolute inset-0 section-gradient-1" />
         <div className="absolute inset-0 mesh-gradient" />
@@ -240,18 +252,18 @@ export default function BuyIptvUkPage() {
         <div className="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
           <span className="inline-flex items-center gap-2 rounded-full bg-violet-50 border border-violet-200 px-5 py-2 text-sm font-semibold text-violet-700 mb-5">
             <Gem className="h-4 w-4" />
-            Inside The Subscription
+            What&apos;s Included When You Buy
           </span>
 
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-5">
-            Every IPTV UK Subscription Ships With{" "}
-            <span className="gradient-text">The Full Library</span>
+            What&apos;s Included With Your{" "}
+            <span className="gradient-text">IPTV Subscription</span>
           </h2>
 
           <p className="mx-auto max-w-2xl text-base lg:text-lg text-muted leading-relaxed mb-8">
-            The tier you pick changes the length of the plan and the per-month
-            rate — nothing else. Every subscription unlocks the same 37,000
-            live channels, 198,000 films and series, native 4K where the feed
+            The plan you pick only changes the length of the term and the
+            per-month rate. Every subscription unlocks the same 37,000 live
+            channels, 198,000 films and series, native 4K where the feed
             supports it, EPG with 7-day catch-up and 24/7 English-language
             support.
           </p>
@@ -267,10 +279,10 @@ export default function BuyIptvUkPage() {
         </div>
       </section>
 
-      {/* Activation flow — bespoke buy-flow content */}
+      {/* How to buy — activation flow */}
       <section
-        id="activation"
-        aria-labelledby="activation-heading"
+        id="how-to-buy"
+        aria-labelledby="how-to-buy-heading"
         className="relative py-14 lg:py-20"
       >
         <div className="absolute inset-0 section-gradient-1" />
@@ -280,19 +292,19 @@ export default function BuyIptvUkPage() {
             <div className="mx-auto max-w-3xl text-center">
               <span className="inline-flex items-center gap-2 rounded-full bg-cyan-50 border border-cyan-200 px-5 py-2 text-sm font-semibold text-cyan-700 mb-5">
                 <Clock3 className="h-4 w-4" />
-                Activation Flow
+                How To Buy
               </span>
               <h2
-                id="activation-heading"
+                id="how-to-buy-heading"
                 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-5"
               >
-                From Checkout To Live Streams In{" "}
-                <span className="gradient-text">Under Ten Minutes</span>
+                How To Buy{" "}
+                <span className="gradient-text">IPTV UK</span>
               </h2>
               <p className="mx-auto max-w-2xl text-base lg:text-lg text-muted leading-relaxed">
-                Buying an IPTV subscription should not require patience. Here
-                is exactly what happens from the moment you choose your plan
-                to the moment your first channel loads.
+                Four steps from choosing a plan to loading your first channel.
+                Here is exactly what happens from the moment you place your
+                order.
               </p>
             </div>
           </MotionReveal>
@@ -353,7 +365,7 @@ export default function BuyIptvUkPage() {
 
       <DevicesSection />
 
-      {/* Refund reassurance — bespoke, addresses biggest buy-intent objection */}
+      {/* Refund reassurance — commercial objection handling */}
       <section
         id="guarantee"
         aria-labelledby="guarantee-heading"
@@ -409,7 +421,7 @@ export default function BuyIptvUkPage() {
 
       <ChannelsSection />
 
-      {/* Buy-intent FAQ — bespoke, targets purchase friction */}
+      {/* Commercial FAQ — page-specific, purchase-focused */}
       <section
         id="buy-faq"
         aria-labelledby="buy-faq-heading"
@@ -427,13 +439,13 @@ export default function BuyIptvUkPage() {
                 id="buy-faq-heading"
                 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-5"
               >
-                Everything You Need To Know{" "}
+                Everything Worth Knowing{" "}
                 <span className="gradient-text">Before You Buy</span>
               </h2>
               <p className="mx-auto max-w-2xl text-base lg:text-lg text-muted leading-relaxed">
-                Common questions from shoppers ready to buy IPTV UK —
-                everything worth knowing before you order your subscription.
-                If we missed one, message us on the{" "}
+                Common questions from shoppers ready to buy IPTV UK — plans,
+                payment, activation, devices, cancellation and support. If we
+                missed one, message us on the{" "}
                 <Link href="/contact" className={linkCls}>
                   contact page
                 </Link>
@@ -443,7 +455,7 @@ export default function BuyIptvUkPage() {
           </MotionReveal>
 
           <div className="space-y-3">
-            {BUY_FAQ_ITEMS.map((item, i) => (
+            {BUY_IPTV_UK_FAQ_ITEMS.map((item, i) => (
               <MotionReveal
                 key={item.question}
                 className="rounded-2xl border border-slate-200/70 bg-white p-5 lg:p-6 shadow-sm"
@@ -548,7 +560,7 @@ export default function BuyIptvUkPage() {
               },
               {
                 "@type": "FAQPage",
-                mainEntity: BUY_FAQ_ITEMS.map((item) => ({
+                mainEntity: BUY_IPTV_UK_FAQ_ITEMS.map((item) => ({
                   "@type": "Question",
                   name: item.question,
                   acceptedAnswer: {

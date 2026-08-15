@@ -422,7 +422,7 @@ export default function IptvSubscriptionUkNestedPage() {
                 all four subscription terms side by side
               </Link>{" "}
               on the comparison page, or head straight to the pricing table to{" "}
-              <Link href="/buy-iptv-uk" className={linkCls}>
+              <Link href="/iptv-uk" className={linkCls}>
                 buy IPTV in the UK
               </Link>{" "}
               tonight — no installer, no dish, no long contract.
@@ -438,7 +438,7 @@ export default function IptvSubscriptionUkNestedPage() {
                 <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </SectionLink>
               <Link
-                href="/buy-iptv-uk"
+                href="/iptv-uk"
                 className="text-sm font-semibold text-violet-700 underline-offset-4 hover:underline"
               >
                 Or go straight to the purchase page &rarr;

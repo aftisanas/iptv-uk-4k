@@ -449,7 +449,7 @@ export default function UkIptvSubscriptionPage() {
               UK channels first, 7-day catch-up, native 4K on the feeds that
               carry it, and support that answers in English at nine on a
               Saturday evening. When you are ready to{" "}
-              <Link href="/buy-iptv-uk" className={linkCls}>
+              <Link href="/iptv-uk" className={linkCls}>
                 buy IPTV in the UK
               </Link>
               , your login lands within minutes of checkout.
@@ -457,7 +457,7 @@ export default function UkIptvSubscriptionPage() {
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
               <SectionLink
-                href="/buy-iptv-uk"
+                href="/iptv-uk"
                 className="group inline-flex items-center gap-2.5 rounded-2xl bg-gradient-to-r from-violet-600 via-purple-600 to-cyan-500 px-7 py-3.5 text-sm sm:text-base font-semibold text-white shadow-lg shadow-purple-900/20 transition-all hover:shadow-2xl hover:shadow-purple-500/30 active:scale-[0.98]"
               >
                 <ShieldCheck className="h-5 w-5" />

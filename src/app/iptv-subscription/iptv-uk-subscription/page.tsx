@@ -473,7 +473,7 @@ export default function IptvUkSubscriptionPage() {
                 see how the four terms compare
               </Link>{" "}
               side by side. The whole catalogue exists so British viewers can{" "}
-              <Link href="/buy-iptv-uk" className={linkCls}>
+              <Link href="/iptv-uk" className={linkCls}>
                 buy IPTV in the UK
               </Link>{" "}
               in a couple of minutes — no installer, no dish, no contract.
@@ -489,7 +489,7 @@ export default function IptvUkSubscriptionPage() {
                 <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </SectionLink>
               <Link
-                href="/buy-iptv-uk"
+                href="/iptv-uk"
                 className="text-sm font-semibold text-violet-700 underline-offset-4 hover:underline"
               >
                 Or go straight to the purchase page &rarr;

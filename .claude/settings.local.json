@@ -40,7 +40,9 @@
       "Bash(curl -s http://localhost:3111/.well-known/security.txt)",
       "Bash(curl -s -o /dev/null -w \"troubleshooting post -> %{http_code}\\\\n\" http://localhost:3111/blog/iptv-uk-troubleshooting)",
       "Bash(kill %1)",
-      "Bash(grep -o 'Quick Links.\\\\{0,900\\\\}' .next/server/app/index.html)"
+      "Bash(grep -o 'Quick Links.\\\\{0,900\\\\}' .next/server/app/index.html)",
+      "Bash(cp \"D:/iptv-lp/fast-iptv-clean/src/app/thanks/page.tsx\" \"D:/iptv-lp/iptv-uk-4k/src/app/thanks/page.tsx\")",
+      "Bash(cp \"D:/iptv-lp/fast-iptv-clean/src/app/thanks/OrderReference.tsx\" \"D:/iptv-lp/iptv-uk-4k/src/app/thanks/OrderReference.tsx\")"
     ]
   }
 }

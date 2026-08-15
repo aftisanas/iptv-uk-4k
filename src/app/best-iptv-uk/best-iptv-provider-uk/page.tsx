@@ -436,7 +436,7 @@ export default function BestIptvProviderUkPage() {
             <p className="mx-auto max-w-2xl text-base lg:text-lg text-muted leading-relaxed mb-8">
               Apply the scorecard to any provider you are considering — ours
               included. When you are ready to{" "}
-              <Link href="/buy-iptv-uk" className={linkCls}>
+              <Link href="/iptv-uk" className={linkCls}>
                 buy IPTV in the UK
               </Link>
               , every one of those five answers is already published on this
@@ -445,7 +445,7 @@ export default function BestIptvProviderUkPage() {
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
               <SectionLink
-                href="/buy-iptv-uk"
+                href="/iptv-uk"
                 className="group inline-flex items-center gap-2.5 rounded-2xl bg-gradient-to-r from-violet-600 via-purple-600 to-cyan-500 px-7 py-3.5 text-sm sm:text-base font-semibold text-white shadow-lg shadow-purple-900/20 transition-all hover:shadow-2xl hover:shadow-purple-500/30 active:scale-[0.98]"
               >
                 <ShieldCheck className="h-5 w-5" />

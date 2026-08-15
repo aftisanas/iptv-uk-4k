@@ -3,7 +3,8 @@ export const CHECKOUT_MODE = (process.env.NEXT_PUBLIC_CHECKOUT_MODE ?? "whatsapp
 export const SITE_NAME = "IPTV UK 4K";
 export const SITE_URL = "https://iptv-uk-4k.com";
 export const SITE_SLUG = "iptv-uk-4k";
-export const CHECKOUT_HUB_URL = "https://checkout.british-iptv-4k.com";
+export const CHECKOUT_HUB_URL =
+  process.env.NEXT_PUBLIC_CHECKOUT_HUB_URL ?? "https://checkout.british-iptv-4k.com";
 export const CONTACT_EMAIL = "contact@buy-iptv-uk.com";
 export const SITE_LOGO_PATH = "/iptv-uk.webp";
 export const SITE_LOGO_URL = `${SITE_URL}${SITE_LOGO_PATH}`;
@@ -16,6 +17,9 @@ export const AUTHOR_BYLINE = {
 export const WHATSAPP_NUMBER = "447878757831";
 export const WHATSAPP_DISPLAY = "+44 7878 757831";
 
+// Base (3-month) extra-connection rate. Longer terms scale this — each plan
+// carries its own `extraConnectionPrice` in PRICING_PLANS below.
+export const EXTRA_CONNECTION_PRICE = 7.25;
 export const EXTRA_CONNECTIONS_MAX = 5;
 
 export const CHECKOUT_COPY = {
@@ -53,7 +57,7 @@ export const FOOTER_LINKS = [
 // only link source that reaches all of them from every page, so dropping an entry
 // orphans that page from the internal link graph.
 export const PILLAR_LINKS = [
-  { label: "Buy IPTV UK", href: "/buy-iptv-uk" },
+  { label: "IPTV UK", href: "/iptv-uk" },
   { label: "IPTV Subscription UK", href: "/iptv-subscription-uk" },
   { label: "Best IPTV UK 2026", href: "/best-iptv-uk" },
   { label: "Best IPTV Provider UK", href: "/best-iptv-uk/best-iptv-provider-uk" },
