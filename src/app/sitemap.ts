@@ -10,9 +10,7 @@ import { BLOG_POSTS, SITE_URL } from "@/lib/constants";
  * route only when that route's content actually changes.
  */
 const ROUTE_LAST_MODIFIED: Record<string, string> = {
-  "/": "2026-07-25",
   "/iptv-uk": "2026-08-15",
-  "/iptv-subscription-uk": "2026-07-25",
   "/best-iptv-uk": "2026-07-25",
   "/best-iptv-uk/best-iptv-provider-uk": "2026-08-02",
   "/iptv-provider-uk": "2026-08-02",
@@ -44,12 +42,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = (path: string) => parseDate(ROUTE_LAST_MODIFIED[path]);
 
   const staticRoutes: MetadataRoute.Sitemap = [
-    // Homepage
-    { url: SITE_URL, lastModified: lastModified("/"), changeFrequency: "weekly", priority: 1 },
-
-    // Commercial landings (highest transactional intent after homepage)
-    { url: `${SITE_URL}/iptv-uk`, lastModified: lastModified("/iptv-uk"), changeFrequency: "weekly", priority: 0.9 },
-    { url: `${SITE_URL}/iptv-subscription-uk`, lastModified: lastModified("/iptv-subscription-uk"), changeFrequency: "weekly", priority: 0.9 },
+    // Primary commercial landing (root 301s here)
+    { url: `${SITE_URL}/iptv-uk`, lastModified: lastModified("/iptv-uk"), changeFrequency: "weekly", priority: 1 },
 
     // Standalone commercial landings (301 destinations from the legacy domain)
     { url: `${SITE_URL}/iptv-provider-uk`, lastModified: lastModified("/iptv-provider-uk"), changeFrequency: "monthly", priority: 0.8 },

@@ -26,7 +26,7 @@ export default function Footer() {
               </span>
             </Link>
             <p className="text-sm text-muted leading-relaxed mb-6">
-              A UK-focused IPTV service with 37,000 live channels, 198,000 films and series, native 4K UHD and an optional Secure Proxy add-on — from £4.17/month.
+              A UK-focused IPTV service with 37,000 live channels, 198,000 films and series and native 4K UHD — from £4.17/month, plus an optional Secure Proxy add-on from £1.58/month.
             </p>
             <div className="space-y-2">
               <div className="flex items-center gap-2 text-sm text-muted">
