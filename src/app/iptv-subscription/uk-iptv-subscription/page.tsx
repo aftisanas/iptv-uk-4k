@@ -169,7 +169,7 @@ const SECTIONS = [
           the page. Optional add-ons for extra simultaneous connections and a
           secure proxy are priced per term at checkout, so what you see is the
           full amount.{" "}
-          <Link href="/#pricing" className={linkCls}>
+          <Link href="/iptv-uk#pricing" className={linkCls}>
             See the pricing table
           </Link>{" "}
           for current GBP figures.

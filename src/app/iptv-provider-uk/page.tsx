@@ -192,7 +192,7 @@ const SECTIONS = [
         connections and a secure proxy are priced per term as explicit checkout
         line items. Nothing core is unbundled: the 4K feeds, catch-up,
         on-demand catalogue and support are included at every tier.{" "}
-        <Link href="/#pricing" className={linkCls}>
+        <Link href="/iptv-uk#pricing" className={linkCls}>
           See the pricing table
         </Link>{" "}
         for current GBP figures, or read the{" "}

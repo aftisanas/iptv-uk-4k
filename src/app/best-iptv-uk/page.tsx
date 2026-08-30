@@ -208,7 +208,7 @@ const SECTIONS = [
           a five-connection household plan for larger homes. The 12-month plan
           settles near the annual sweet spot; the 24-month plan is the
           cheapest per-month figure on the page.{" "}
-          <Link href="/#pricing" className={linkCls}>
+          <Link href="/iptv-uk#pricing" className={linkCls}>
             See the pricing table
           </Link>{" "}
           for the current GBP figures.

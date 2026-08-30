@@ -207,7 +207,7 @@ const SECTIONS = [
         maintaining several separate sports subscriptions through traditional
         routes, the annual difference for a household following more than one
         sport is substantial.{" "}
-        <Link href="/#pricing" className={linkCls}>
+        <Link href="/iptv-uk#pricing" className={linkCls}>
           See the pricing table
         </Link>{" "}
         for current GBP figures, or compare terms on the{" "}

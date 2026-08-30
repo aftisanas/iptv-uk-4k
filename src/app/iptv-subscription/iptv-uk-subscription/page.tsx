@@ -161,7 +161,7 @@ const SECTIONS = [
           checkout. Nothing sits behind a drip-charge add-on: the 4K feeds,
           the 7-day EPG, the on-demand library, the 40+ language packs and
           24/7 support are all bundled into the base price.{" "}
-          <Link href="/#pricing" className={linkCls}>
+          <Link href="/iptv-uk#pricing" className={linkCls}>
             View the full pricing table
           </Link>{" "}
           for every term side by side.

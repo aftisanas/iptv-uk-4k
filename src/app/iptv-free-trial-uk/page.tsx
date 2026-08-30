@@ -236,7 +236,7 @@ const SECTIONS = [
         monthly rate, because you can still exit inside the window. Channel
         line-up, 4K delivery and support are identical across all four; term
         length and included connections are the only differences.{" "}
-        <Link href="/#pricing" className={linkCls}>
+        <Link href="/iptv-uk#pricing" className={linkCls}>
           See current GBP pricing
         </Link>
         , or compare the terms in detail on the{" "}

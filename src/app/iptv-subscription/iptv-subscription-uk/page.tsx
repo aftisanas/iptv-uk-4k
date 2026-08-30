@@ -121,7 +121,7 @@ const SECTIONS = [
         committing longer. One simultaneous connection is included by default,
         with up to five extra connections available — priced per term, from
         £7.25 each on the 3-month plan.{" "}
-        <Link href="/#pricing" className={linkCls}>
+        <Link href="/iptv-uk#pricing" className={linkCls}>
           View the full pricing table
         </Link>{" "}
         with every term side by side.

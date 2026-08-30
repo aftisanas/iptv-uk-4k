@@ -7,6 +7,7 @@ import FeaturesSection from "@/components/FeaturesSection";
 import PricingSection from "@/components/PricingSection";
 import DevicesSection from "@/components/DevicesSection";
 import ChannelsSection from "@/components/ChannelsSection";
+import TrustPanels from "@/components/TrustPanels";
 import FAQSection from "@/components/FAQSection";
 import TrustSection from "@/components/TrustSection";
 import CTASection from "@/components/CTASection";
@@ -129,6 +130,9 @@ export default function IptvSubscriptionUkPage() {
 
       <DevicesSection />
       <ChannelsSection />
+      {/* Trust panels — real support threads as evidence of what happens
+          after payment. No ratings, scores or counts; see src/lib/trust-panels.ts. */}
+      <TrustPanels />
       <FAQSection />
       <TrustSection />
       <CTASection />
