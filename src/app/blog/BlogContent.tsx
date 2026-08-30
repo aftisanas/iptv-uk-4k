@@ -90,7 +90,7 @@ export default function BlogContent() {
           >
             Expert articles on IPTV setup, streaming optimisation, device guides,
             and the latest in UK television — essential reading for informed{" "}
-            <Link href="/#pricing" className="text-cyan-300 hover:text-cyan-200 underline-offset-2 hover:underline">
+            <Link href="/iptv-uk#pricing" className="text-cyan-300 hover:text-cyan-200 underline-offset-2 hover:underline">
               IPTV subscription
             </Link>{" "}
             decisions.

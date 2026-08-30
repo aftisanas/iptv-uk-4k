@@ -34,20 +34,59 @@ export const CHECKOUT_COPY = {
   footerNote: "Payment handled securely once your order is confirmed.",
 } as const;
 
-// Top navigation is deliberately short — four destinations, all on the homepage.
+/**
+ * Payment is taken by Shopify Payments on a Shopify-hosted checkout, which
+ * lives on a different domain to this site. An unannounced domain change at
+ * the moment the card comes out is the single loudest scam signal we can send,
+ * so we name the handoff before it happens rather than letting it surprise
+ * anyone. Wording must stay true to the real flow — see PAYMENT_MARKS.
+ */
+export const TRUST_COPY = {
+  /** Shown next to the plan buttons and on the checkout page. */
+  handoff:
+    "You'll finish payment on our secure Shopify checkout — the same system used by millions of UK stores.",
+  /**
+   * The fear here is a recurring charge from a service the buyer has just met.
+   * We answer that, and only that: there is no subscription product, so nothing
+   * renews. We deliberately do NOT claim "no stored card" — checkout offers
+   * Shop Pay, which saves cards by design.
+   */
+  oneTime: "One-time payment — no subscription, nothing renews automatically.",
+  /** Non-UK visitors are a large share of traffic. Say the billing currency up front. */
+  currency: "Priced and charged in GBP. Your bank converts at its own rate.",
+  guarantee: "30-day money-back guarantee",
+} as const;
+
+/** Card marks shown at the decision points. Files live in /public/trust. */
+export const PAYMENT_MARKS = [
+  { id: "visa", name: "Visa" },
+  { id: "mastercard", name: "Mastercard" },
+  { id: "amex", name: "American Express" },
+  { id: "paypal", name: "PayPal" },
+] as const;
+
+// "/" is 301-redirected to the money page in next.config.ts, so the homepage
+// sections do not live at "/" any more. Anchor links must point at the real
+// path: a "/#pricing" href sends the router through the redirect, which drops
+// the fragment and lands the visitor at the top of the page instead of the
+// section. Every in-page anchor is built from this.
+export const HOME_PATH = "/iptv-uk";
+
+// Top navigation is deliberately short — five destinations, all on the money page.
 export const NAV_LINKS = [
-  { label: "Home", href: "/" },
-  { label: "Why us", href: "/#features" },
-  { label: "Pricing", href: "/#pricing" },
-  { label: "FAQ", href: "/#faq" },
+  { label: "Home", href: HOME_PATH },
+  { label: "Why us", href: `${HOME_PATH}#features` },
+  { label: "Pricing", href: `${HOME_PATH}#pricing` },
+  { label: "Reviews", href: `${HOME_PATH}#reviews` },
+  { label: "FAQ", href: `${HOME_PATH}#faq` },
 ] as const;
 
 // Footer "Quick Links" stays broader than the navbar: it is the only footer-level
 // link into /blog and /contact, so those must not be dropped alongside the nav trim.
 export const FOOTER_LINKS = [
-  { label: "Home", href: "/" },
-  { label: "Pricing", href: "/#pricing" },
-  { label: "FAQ", href: "/#faq" },
+  { label: "Home", href: HOME_PATH },
+  { label: "Pricing", href: `${HOME_PATH}#pricing` },
+  { label: "FAQ", href: `${HOME_PATH}#faq` },
   { label: "Tutorials", href: "/tutorials" },
   { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/contact" },

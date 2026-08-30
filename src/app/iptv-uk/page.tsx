@@ -14,6 +14,7 @@ import FeaturesSection from "@/components/FeaturesSection";
 import PricingSection from "@/components/PricingSection";
 import DevicesSection from "@/components/DevicesSection";
 import ChannelsSection from "@/components/ChannelsSection";
+import TrustPanels from "@/components/TrustPanels";
 import TrustSection from "@/components/TrustSection";
 import CTASection from "@/components/CTASection";
 import SectionLink from "@/components/SectionLink";
@@ -421,9 +422,17 @@ export default function IptvUkPage() {
 
       <ChannelsSection />
 
-      {/* Commercial FAQ — page-specific, purchase-focused */}
+      {/* Trust panels — real support threads as evidence of what happens
+          after payment. No ratings, scores or counts; see src/lib/trust-panels.ts. */}
+      <TrustPanels />
+
+      {/* Commercial FAQ — page-specific, purchase-focused.
+          The section id is "faq", not "buy-faq": the global nav links every
+          page at HOME_PATH#faq, and "/#faq" is the fragment Google already
+          knows from before "/" was redirected here. Nothing linked to
+          "#buy-faq" — it was only ever defined, never targeted. */}
       <section
-        id="buy-faq"
+        id="faq"
         aria-labelledby="buy-faq-heading"
         className="relative py-14 lg:py-20"
       >

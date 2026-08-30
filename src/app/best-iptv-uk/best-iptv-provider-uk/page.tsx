@@ -170,7 +170,7 @@ const SECTIONS = [
         <p>
           <strong className="text-foreground">Pricing:</strong> four terms
           priced in pounds on the{" "}
-          <Link href="/#pricing" className={linkCls}>
+          <Link href="/iptv-uk#pricing" className={linkCls}>
             pricing table
           </Link>
           , with extra connections and the secure proxy shown as itemised

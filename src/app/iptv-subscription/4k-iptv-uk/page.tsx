@@ -254,7 +254,7 @@ const SECTIONS = [
           resolution paywall and no per-stream surcharge. The only variables
           across the four subscription terms are how long the subscription runs
           and how many connections stream at once.{" "}
-          <Link href="/#pricing" className={linkCls}>
+          <Link href="/iptv-uk#pricing" className={linkCls}>
             See the pricing table
           </Link>{" "}
           for current GBP figures.
