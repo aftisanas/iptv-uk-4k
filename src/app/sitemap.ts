@@ -10,17 +10,7 @@ import { BLOG_POSTS, SITE_URL } from "@/lib/constants";
  * route only when that route's content actually changes.
  */
 const ROUTE_LAST_MODIFIED: Record<string, string> = {
-  "/iptv-uk": "2026-08-15",
-  "/best-iptv-uk": "2026-07-25",
-  "/best-iptv-uk/best-iptv-provider-uk": "2026-08-02",
-  "/iptv-provider-uk": "2026-08-02",
-  "/uk-sports-iptv": "2026-08-02",
-  "/iptv-free-trial-uk": "2026-08-02",
-  "/iptv-subscription": "2026-07-25",
-  "/iptv-subscription/iptv-subscription-uk": "2026-07-25",
-  "/iptv-subscription/iptv-uk-subscription": "2026-07-25",
-  "/iptv-subscription/4k-iptv-uk": "2026-08-02",
-  "/iptv-subscription/uk-iptv-subscription": "2026-08-02",
+  "/buy-iptv": "2026-09-08",
   "/blog": "2026-07-27",
   "/tutorials": "2026-07-27",
   "/contact": "2026-07-27",
@@ -42,24 +32,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = (path: string) => parseDate(ROUTE_LAST_MODIFIED[path]);
 
   const staticRoutes: MetadataRoute.Sitemap = [
-    // Primary commercial landing (root 301s here)
-    { url: `${SITE_URL}/iptv-uk`, lastModified: lastModified("/iptv-uk"), changeFrequency: "weekly", priority: 1 },
-
-    // Standalone commercial landings (301 destinations from the legacy domain)
-    { url: `${SITE_URL}/iptv-provider-uk`, lastModified: lastModified("/iptv-provider-uk"), changeFrequency: "monthly", priority: 0.8 },
-    { url: `${SITE_URL}/uk-sports-iptv`, lastModified: lastModified("/uk-sports-iptv"), changeFrequency: "monthly", priority: 0.8 },
-    { url: `${SITE_URL}/iptv-free-trial-uk`, lastModified: lastModified("/iptv-free-trial-uk"), changeFrequency: "monthly", priority: 0.7 },
-
-    // Pillar article + child
-    { url: `${SITE_URL}/best-iptv-uk`, lastModified: lastModified("/best-iptv-uk"), changeFrequency: "monthly", priority: 0.8 },
-    { url: `${SITE_URL}/best-iptv-uk/best-iptv-provider-uk`, lastModified: lastModified("/best-iptv-uk/best-iptv-provider-uk"), changeFrequency: "monthly", priority: 0.7 },
-
-    // Subscription hub + child articles
-    { url: `${SITE_URL}/iptv-subscription`, lastModified: lastModified("/iptv-subscription"), changeFrequency: "monthly", priority: 0.7 },
-    { url: `${SITE_URL}/iptv-subscription/4k-iptv-uk`, lastModified: lastModified("/iptv-subscription/4k-iptv-uk"), changeFrequency: "monthly", priority: 0.8 },
-    { url: `${SITE_URL}/iptv-subscription/iptv-subscription-uk`, lastModified: lastModified("/iptv-subscription/iptv-subscription-uk"), changeFrequency: "monthly", priority: 0.7 },
-    { url: `${SITE_URL}/iptv-subscription/iptv-uk-subscription`, lastModified: lastModified("/iptv-subscription/iptv-uk-subscription"), changeFrequency: "monthly", priority: 0.7 },
-    { url: `${SITE_URL}/iptv-subscription/uk-iptv-subscription`, lastModified: lastModified("/iptv-subscription/uk-iptv-subscription"), changeFrequency: "monthly", priority: 0.7 },
+    // The single commercial landing. Every other money page 301s here, and a
+    // redirected URL must not be listed — a sitemap entry asks Google to crawl a
+    // page that has nothing to serve but a redirect.
+    { url: `${SITE_URL}/buy-iptv`, lastModified: lastModified("/buy-iptv"), changeFrequency: "weekly", priority: 1 },
 
     // Editorial indexes
     { url: `${SITE_URL}/blog`, lastModified: lastModified("/blog"), changeFrequency: "weekly", priority: 0.8 },
