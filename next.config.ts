@@ -35,26 +35,29 @@ const nextConfig: NextConfig = {
     ];
   },
   /**
-   * Every commercial landing consolidates into /buy-iptv.
+   * Every commercial landing consolidates into /uk-iptv.
    *
-   * The site previously ran eleven separate money pages plus /iptv-uk. They all
-   * sold the same four plans, so they competed with each other for the same
-   * queries and split the signal eleven ways. One page now carries the offer and
-   * everything else points at it.
+   * The site once ran twelve money pages selling the same four plans to the same
+   * queries, competing with each other and splitting the signal twelve ways. One
+   * page carries the offer; everything else points at it.
    *
-   * /buy-iptv-uk and /iptv-subscription-uk already pointed at /iptv-uk, so those
-   * two are now chains (buy-iptv-uk -> iptv-uk -> buy-iptv) as far as any link
-   * still pointing at the original is concerned. They are repointed straight at
-   * /buy-iptv here so the chain is only ever walked by external links, never by
-   * anything on this site.
+   * That page has now moved three times: /iptv-uk (15 Aug), /buy-iptv (8 Sep),
+   * /uk-iptv (14 Sep). Every source below is repointed at the current
+   * destination on each move, so nothing on this site ever walks a chain — a
+   * request to any of these URLs is one 301 and it arrives. The chains exist
+   * only in Google's memory of the earlier destinations and in whatever external
+   * links still point at the oldest URLs, which is why the moves are not free:
+   * each one restarts the indexing and consolidation work at a new URL before
+   * the previous one has finished.
    *
    * The page files under src/app for the redirected routes are deliberately kept
    * rather than deleted — the redirect makes them unreachable, and the copy is
    * worth having if any of these come back.
    */
   async redirects() {
-    const toBuyIptv = [
+    const toUkIptv = [
       "/",
+      "/buy-iptv",
       "/iptv-uk",
       "/buy-iptv-uk",
       "/iptv-subscription-uk",
@@ -70,12 +73,12 @@ const nextConfig: NextConfig = {
       "/iptv-subscription/uk-iptv-subscription",
     ].map((source) => ({
       source,
-      destination: "/buy-iptv",
+      destination: "/uk-iptv",
       permanent: true,
     }));
 
     return [
-      ...toBuyIptv,
+      ...toUkIptv,
       {
         source: "/blog/iptv-vs-sky-comparison",
         destination: "/blog",

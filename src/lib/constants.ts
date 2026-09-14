@@ -70,7 +70,7 @@ export const PAYMENT_MARKS = [
 // path: a "/#pricing" href sends the router through the redirect, which drops
 // the fragment and lands the visitor at the top of the page instead of the
 // section. Every in-page anchor is built from this.
-export const HOME_PATH = "/buy-iptv";
+export const HOME_PATH = "/uk-iptv";
 
 // Top navigation is deliberately short — five destinations, all on the money page.
 export const NAV_LINKS = [
