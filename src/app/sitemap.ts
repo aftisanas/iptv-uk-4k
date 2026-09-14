@@ -10,7 +10,7 @@ import { BLOG_POSTS, SITE_URL } from "@/lib/constants";
  * route only when that route's content actually changes.
  */
 const ROUTE_LAST_MODIFIED: Record<string, string> = {
-  "/buy-iptv": "2026-09-08",
+  "/uk-iptv": "2026-09-14",
   "/blog": "2026-07-27",
   "/tutorials": "2026-07-27",
   "/contact": "2026-07-27",
@@ -35,7 +35,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // The single commercial landing. Every other money page 301s here, and a
     // redirected URL must not be listed — a sitemap entry asks Google to crawl a
     // page that has nothing to serve but a redirect.
-    { url: `${SITE_URL}/buy-iptv`, lastModified: lastModified("/buy-iptv"), changeFrequency: "weekly", priority: 1 },
+    { url: `${SITE_URL}/uk-iptv`, lastModified: lastModified("/uk-iptv"), changeFrequency: "weekly", priority: 1 },
 
     // Editorial indexes
     { url: `${SITE_URL}/blog`, lastModified: lastModified("/blog"), changeFrequency: "weekly", priority: 0.8 },
